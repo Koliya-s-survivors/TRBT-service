@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavigationMenu from '../navigation-menu';
 import { Catalogue, MyProfile, LogIn } from '../pages';
@@ -10,35 +10,37 @@ export default class App extends Component {
 
     return (
       <>
-        <header>This is header tag</header>
+        <Router>
+          <header>This is header tag</header>
 
-        <NavigationMenu />
+          <NavigationMenu />
 
-        <section className={"searchPanel"}>This is search panel</section>
+          <section className={"searchPanel"}>This is search panel</section>
 
-        <main>
-          <Switch>
-            <Route
-              path="/"
-              component={Catalogue}
-              exact />
+          <main>
+            <Switch>
+              <Route
+                path="/"
+                component={Catalogue}
+                exact />
 
-            <Route
-              path="/my-profile"
-              component={MyProfile}
-              exact />
+              <Route
+                path="/my-profile"
+                component={MyProfile}
+                exact />
 
-            <Route
-              path="/login"
-              component={LogIn}
-              exact />
+              <Route
+                path="/login"
+                component={LogIn}
+                exact />
 
 
-            <Route render={() => <h2>Page not found</h2>} />
+              <Route render={() => <h2>Page not found</h2>} />
 
-          </Switch>
-        </main>
-        <footer> This is footer tag</footer>
+            </Switch>
+          </main>
+          <footer> This is footer tag</footer>
+        </Router>
       </>
     );
   }
