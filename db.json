@@ -1,0 +1,83 @@
+{
+  "posts": [
+    {
+      "title": "new json-server",
+      "author": "new Sergey111",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "title": "json-server1",
+      "author": "Hamed"
+    },
+    {
+      "id": 3,
+      "title": "json-server2",
+      "author": "Rost"
+    },
+    {
+      "id": 4,
+      "title": "json-server3",
+      "author": "Hamed"
+    },
+    {
+      "id": 5,
+      "title": "json-server3",
+      "author": "Sergey"
+    },
+    {
+      "title": "json-server3",
+      "author": "Sergey",
+      "id": 6
+    },
+    {
+      "title": "json-server3",
+      "author": "Sergey",
+      "id": 7
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment1",
+      "postId": 1
+    },
+    {
+      "id": 1,
+      "body": "some comment2",
+      "postId": 2
+    },
+    {
+      "id": 1,
+      "body": "some comment3",
+      "postId": 3
+    },
+    {
+      "id": 1,
+      "body": "some comment4",
+      "postId": 2
+    },
+    {
+      "id": 1,
+      "body": "some comment5",
+      "postId": 4
+    },
+    {
+      "id": 1,
+      "body": "some comment6",
+      "postId": 1
+    }
+  ],
+  "profile": [
+    {
+      "id": 1,
+      "name": "Hamed",
+      "age": 18
+    },
+    {
+      "id": 2,
+      "name": "Rost",
+      "age": 18
+    }
+  ]
+}
