@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+
+// Routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavigationMenu from '../navigation-menu';
 import { Catalogue, MyProfile, LogIn } from '../pages';
 
 export default class App extends Component {
-
   render() {
 
     return (
@@ -39,8 +40,10 @@ export default class App extends Component {
 
             </Switch>
           </main>
+
           <footer> This is footer tag</footer>
         </Router>
+
       </>
     );
   }
