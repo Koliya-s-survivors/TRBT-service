@@ -1,0 +1,6 @@
+@media(min-width: 576px) {
+    .catalog-categories {
+        justify-content: flex-start;
+        text-align: start;
+    }
+}

@@ -1,0 +1,10 @@
+.catalog-categories {
+    display: grid;
+    justify-content: center;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.catalog-categories p:nth-child(2) {
+    color: rgb(67,184,8);
+}

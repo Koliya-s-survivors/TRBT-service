@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // components
 import CatalogContent from "../../catalog-content";
 import CatalogGenres from '../../catalog-genres';
+import CatalogCategories from '../../catalog-categories';
  
 export default class Catalogue extends Component {
   state = {
@@ -103,7 +104,7 @@ export default class Catalogue extends Component {
       },
       {
         id: 3,
-        genre: 'undefined',
+        genre: 'Undefined',
       },
       {
         id: 4,
@@ -127,7 +128,7 @@ export default class Catalogue extends Component {
       },
       {
         id: 9,
-        genre: 'Golden hit',
+        genre: 'Golden hits',
       },
       {
         id: 10,
@@ -146,8 +147,9 @@ render() {
     return (
       <>
         <section> This is Catalogue section</section>
-        <CatalogContent objMelodies={this.state.objMelodies} />
         <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
+        <CatalogCategories category={this.state.isActiveGenre}/>
+        <CatalogContent objMelodies={this.state.objMelodies} />
        </>
     )
   }
