@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 // components
-// import CatalogContent from "../../catalog-content";
+import CatalogContent from "../../catalog-content";
 
 export default class Catalogue extends Component {
-  render() {
-    const objMelodies = [
-      { id:0,
+  state = {
+    objMelodies: [
+      {
+        id: 0,
         img: 'some text',
         musicName: 'Hoolio Iglessias',
         artist: 'Hoolio Iglessias',
@@ -88,11 +89,13 @@ export default class Catalogue extends Component {
         artist: 'Hoolio Iglessias4',
         price: '$4',
       },
-    ];
+    ],
+  }
+  render() {    
     return (
       <>
         <section> This is Catalogue section</section>
-        {/* <CatalogContent objMelodies={objMelodies} /> */}
+        <CatalogContent objMelodies={this.state.objMelodies} />
       </>
     )
   }
