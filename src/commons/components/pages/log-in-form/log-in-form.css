@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.log-in-form {
+  padding: 20px 5px;
+}
+
+.log-in-form section h3 {
+  width: 98%;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+
+  text-align: center;
+  padding: 20px 0;
+  margin: 0 auto;
+
+  border-bottom: 1px solid gray;
+}
+
+.log-in-form section form {
+  display: grid;
+  grid-template-columns: 20px 70px 200px 20px;
+  grid-template-rows: repeat(5, 1fr);
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.log-in-form section form label[for="user_email"] {
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+
+.log-in-form section form input[id="user_email"] {
+  grid-column: 3/4;
+  grid-row: 1/2;
+}
+
+.log-in-form section form input[id="user_email"] + p {
+  grid-column: 2/4;
+  grid-row: 2/3;
+
+  font-size: 14px;
+  color: red;
+}
+
+.log-in-form section form label[for="user_password"] {
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+
+.log-in-form section form input[id="user_password"] {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
+
+.log-in-form section form input[id="user_password"] + p {
+  grid-column: 2/4;
+  grid-row: 4/5;
+
+  font-size: 14px;
+  color: red;
+}
+
+.log-in-form section form button[type="submit"] {
+  grid-column: 3/4;
+  grid-row: 5/6;
+
+  padding: 0 5px;
+  justify-self: end;
+
+  color: white;
+  border-radius: 4px;
+  background: chartreuse;
+  border: chartreuse;
+}
+
+.log-in-form section form a {
+  grid-column: 2/3;
+  grid-row: 5/6;
+
+  justify-self: start;
+}
