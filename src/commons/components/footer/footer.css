@@ -1,0 +1,8 @@
+.footer {
+    display: grid;
+    grid-template-columns: 320px;
+    grid-auto-rows: min-content;
+    justify-content: center;
+    background: darkgrey;
+    color: #fff;
+}

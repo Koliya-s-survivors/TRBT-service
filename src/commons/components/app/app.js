@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavigationMenu from '../navigation-menu';
 import { Catalogue, MyProfile, LogIn } from '../pages';
+import Footer from "../footer";
 
 export default class App extends Component {
   render() {
@@ -41,7 +42,7 @@ export default class App extends Component {
             </Switch>
           </main>
 
-          <footer> This is footer tag</footer>
+          <Footer/>
         </Router>
 
       </>
