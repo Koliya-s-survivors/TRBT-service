@@ -1,0 +1,9 @@
+@media(min-width: 576px){
+    .catalog-genres ul {
+        grid-template-columns: repeat(auto-fill, 100px);
+    }
+    .catalog-genres {
+        grid-template-columns: 100px 1fr;
+        align-items: center;
+    }
+}

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 // components
 import CatalogContent from "../../catalog-content";
-
+import CatalogGenres from '../../catalog-genres';
+ 
 export default class Catalogue extends Component {
   state = {
     objMelodies: [
@@ -90,13 +91,65 @@ export default class Catalogue extends Component {
         price: '$4',
       },
     ],
+    
+     genres: [
+      {
+        id: 1,
+        genre: 'Из фильмов',
+      },
+      {
+        id: 2,
+        genre: 'Поп',
+      },
+      {
+        id: 3,
+        genre: 'undefined',
+      },
+      {
+        id: 4,
+        genre: 'Рок',
+      },
+      {
+        id: 5,
+        genre: 'Другое',
+      },
+      {
+        id: 6,
+        genre: 'Dance',
+      },
+      {
+        id: 7,
+        genre: 'Хип-хоп',
+      },
+      {
+        id: 8,
+        genre: 'Приколы',
+      },
+      {
+        id: 9,
+        genre: 'Golden hit',
+      },
+      {
+        id: 10,
+        genre: 'Для детей',
+      },
+   ],
+    
+    isActiveGenre: 'Из фильмов',
   }
-  render() {    
+
+genreClick = (genre) => {
+    this.setState({isActiveGenre: genre});
+  }
+ 
+render() {    
     return (
       <>
         <section> This is Catalogue section</section>
         <CatalogContent objMelodies={this.state.objMelodies} />
-      </>
+        <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
+       </>
     )
   }
 }
+          
