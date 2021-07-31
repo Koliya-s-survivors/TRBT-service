@@ -1,11 +1,12 @@
 .catalog-search-panel {
-    padding: 0 0 20px 20px;
+    padding: 10px;
     background-color: lawngreen;
     border-radius: 4px;
 }
 .catalog-search-panel section{
     display: grid;
 
+    grid-template-columns: 1fr;
     grid-template-rows: repeat(2, min-content);
 }
 .catalog-search-panel > section > article:nth-child(1) {
@@ -15,18 +16,19 @@
 
     display: grid;
     grid-template-columns: 80px 1fr;
-    grid-template-rows: 100px;
+    grid-template-rows: 80px;
+    justify-items: center;
     align-items: center;
+    column-gap: 5px;
 }
 .catalog-search-panel > section > article:nth-child(1) > svg {
     grid-column: 1/2;
     grid-row: 1/2;
-
-    margin-left: 10px;
 }
 .catalog-search-panel > section > article:nth-child(1) > h3 {
     grid-column: 2/3;
     grid-row: 1/2;
+    justify-self: start;
 
     font-weight: 600;
     font-size: 1.4em;
@@ -37,6 +39,7 @@
 
     display: grid;
     grid-template-columns: 200px 1fr;
+    grid-template-rows: 1fr;
 }
 .catalog-search-panel > section > article:nth-child(2) > input {
     grid-column: 1/2;
