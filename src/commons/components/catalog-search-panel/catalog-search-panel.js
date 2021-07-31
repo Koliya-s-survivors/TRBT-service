@@ -8,9 +8,9 @@ export default class CatalogSearchPanel extends Component {
     value: ''
   }
 
-  onChange (value) {
+  onChange = (e) => {
     this.setState({
-      value
+      value: e.target.value
     })
   }
 
