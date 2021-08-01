@@ -15,8 +15,8 @@ const CatalogCategories = (props) => {
                 <p>"{props.category}"</p>
             </section>
             <ul>
-                {props.genres.find(item => {return item.genre === props.category}).categories.map((item, i) => {
-                    return <CatalogCategoriesItem key={i} category={item}/>
+                {props.genres.find(item => {return item.genre === props.category}).categories.map(item => {
+                    return <CatalogCategoriesItem key={item.id}>{item.title}</CatalogCategoriesItem>
                 })}
             </ul>
         </article>
