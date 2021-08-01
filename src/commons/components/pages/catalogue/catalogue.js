@@ -1,9 +1,11 @@
 import React, { Component } from "react";
-// components
-import CatalogContent from "../../catalog-content";
+
+// components 
 import CatalogGenres from '../../catalog-genres';
 import CatalogCategories from '../../catalog-categories';
- 
+import CatalogInfo from "../../catalog-info";
+import CatalogContent from "../../catalog-content";
+
 export default class Catalogue extends Component {
   state = {
     objMelodies: [
@@ -256,6 +258,7 @@ export default class Catalogue extends Component {
    ],
     
     isActiveGenre: 'Из фильмов',
+    isActiveCategory: 'Классика',
   }
 
 genreClick = (genre) => {
@@ -268,7 +271,8 @@ render() {
         <section> This is Catalogue section</section>
         <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
         <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres}/>
-        <CatalogContent objMelodies={this.state.objMelodies} />
+        <CatalogInfo activeGenre={this.state.isActiveGenre} activeCategory={this.state.isActiveCategory}/>
+        <CatalogContent objMelodies={this.state.objMelodies} />         
        </>
     )
   }

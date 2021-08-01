@@ -1,0 +1,9 @@
+.footer-logo {
+    /* padding: 5px 10px 0 10px;
+    text-align: center;
+    margin-top: 20px; */
+display: grid;
+grid-template-columns: 1fr;
+justify-items: center;
+align-items: center;
+}
