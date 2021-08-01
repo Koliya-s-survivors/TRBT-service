@@ -5,5 +5,5 @@ import LogIn from "./log-in";
 export {
   Catalogue,
   MyProfile,
-  LogIn
+  LogIn,
 };
