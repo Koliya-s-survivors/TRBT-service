@@ -1,10 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-}
-
 .log-in-form {
-  padding: 20px 5px;
+  padding: 0 5px;
 }
 
 .log-in-form section h3 {
@@ -17,7 +12,7 @@
   padding: 20px 0;
   margin: 0 auto;
 
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid lightgrey;
 }
 
 .log-in-form section form {
@@ -26,6 +21,11 @@
   grid-template-rows: repeat(5, 1fr);
   padding: 20px 0;
   justify-content: center;
+}
+
+.log-in-form section form input {
+  border: 2px solid lightgrey;
+  border-radius: 4px;
 }
 
 .log-in-form section form label[for="user_email"] {
@@ -73,8 +73,8 @@
 
   color: white;
   border-radius: 4px;
-  background: chartreuse;
-  border: chartreuse;
+  background: lawngreen;
+  border: lawngreen;
 }
 
 .log-in-form section form a {

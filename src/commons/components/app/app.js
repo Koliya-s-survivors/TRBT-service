@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import NavigationMenu from '../navigation-menu';
-import { Catalogue, MyProfile, LogInForm } from '../pages';
+import { Catalogue, MyProfile, LogIn } from '../pages';
 
 export default class App extends Component {
   render() {
@@ -32,7 +32,7 @@ export default class App extends Component {
 
               <Route
                 path="/login"
-                component={LogInForm}
+                component={LogIn}
                 exact />
 
 
