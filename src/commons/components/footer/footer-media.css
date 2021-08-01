@@ -1,0 +1,7 @@
+@media(min-width: 576px) {
+    .footer {
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 1fr 2fr;
+    }
+}
+
