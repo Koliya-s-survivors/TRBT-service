@@ -5,6 +5,12 @@
     text-align: center;
 }
 
-.catalog-categories p:nth-child(2) {
+.catalog-categories section p:nth-child(2) {
     color: rgb(67,184,8);
+    margin-bottom: 10px;
+}
+
+.catalog-categories ul {
+    display: grid;
+    grid-row-gap: 5px;
 }

@@ -97,42 +97,52 @@ export default class Catalogue extends Component {
       {
         id: 1,
         genre: 'Из фильмов',
+        categories: ['Классика', 'Другое'],
       },
       {
         id: 2,
         genre: 'Поп',
+        categories: ['Новинки', 'Другое'],
       },
       {
         id: 3,
         genre: 'Undefined',
+        categories: ['Not found', 'Другое'],
       },
       {
         id: 4,
         genre: 'Рок',
+        categories: ['Классика', 'Другое'],
       },
       {
         id: 5,
         genre: 'Другое',
+        categories: ['Новинки', 'Другое'],
       },
       {
         id: 6,
         genre: 'Dance',
+        categories: ['Новинки', 'Другое'],
       },
       {
         id: 7,
         genre: 'Хип-хоп',
+        categories: ['Классика', 'Другое'],
       },
       {
         id: 8,
         genre: 'Приколы',
+        categories: ['Not found', 'Другое'],
       },
       {
         id: 9,
         genre: 'Golden hits',
+        categories: ['Классика', 'Другое'],
       },
       {
         id: 10,
         genre: 'Для детей',
+        categories: ['Новинки', 'Другое'],
       },
    ],
     
@@ -148,7 +158,7 @@ render() {
       <>
         <section> This is Catalogue section</section>
         <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
-        <CatalogCategories category={this.state.isActiveGenre}/>
+        <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres}/>
         <CatalogContent objMelodies={this.state.objMelodies} />
        </>
     )
