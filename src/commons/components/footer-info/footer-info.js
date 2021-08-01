@@ -1,7 +1,6 @@
 import React from 'react';
 //CSS
 import './footer-info.css';
-import './footer-info-media.css';
 
 const FooterInfo = () => {
   return (
