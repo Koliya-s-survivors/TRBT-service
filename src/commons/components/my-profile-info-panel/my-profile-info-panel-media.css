@@ -1,0 +1,5 @@
+@media (min-width: 576px) {
+  .my-profile-info-panel section {
+    grid-template-rows: 50px;
+  }
+}
