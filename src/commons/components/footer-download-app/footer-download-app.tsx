@@ -3,7 +3,7 @@ import React from 'react';
 import './footer-download-app.css';
 import './footer-download-app-media.css';
 
-const FooterDownloadApp = () => {
+const FooterDownloadApp:React.FC = () => {
   // @ts-ignore
   return (
     <>

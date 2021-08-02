@@ -3,7 +3,7 @@ import React from 'react';
 import './footer-logo.css';
 import './footer-logo-media.css';
 
-const FooterLogo = () => {
+const FooterLogo:React.FC = () => {
   return (
     <section className="footer-logo">
       <img src="./assets/img/footer-img/logo.svg" alt="Telesens"/>

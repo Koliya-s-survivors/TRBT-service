@@ -7,7 +7,7 @@ import FooterLogo from "../footer-logo";
 import FooterInfo from '../footer-info';
 import FooterDownloadApp from '../footer-download-app';
 
-const Footer = () => {
+const Footer:React.FC = () => {
   return (
       <footer className="footer">
         <FooterLogo/>
