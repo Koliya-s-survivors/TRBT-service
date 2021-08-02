@@ -3,7 +3,19 @@ import React from 'react';
 // CSS
 import './catalog-content-item.css';
 
-function CatalogContentItem(props) {
+interface CatalogContentItemProps {
+  id: number,
+  melody: CatalogContentItemPropsMelody
+}
+
+interface CatalogContentItemPropsMelody {
+  img: any,
+  musicName: string,
+  artist: string,
+  price: number,
+}
+
+function CatalogContentItem(props: CatalogContentItemProps) {
   const { img, musicName, artist, price } = props.melody;
 
   return (
