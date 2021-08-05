@@ -4,7 +4,11 @@ import React, { Component } from "react";
 import './my-profile-info-panel.css';
 import './my-profile-info-panel-media.css'
 
-const MyProfileInfoPanel = ({ loginedEmail = 'defaultEmail@gmail.com' }) => {
+interface MyProfileInfoPanelProps {
+    loginedEmail: string,
+}
+
+const MyProfileInfoPanel = ({ loginedEmail = 'defaultEmail@gmail.com' }: MyProfileInfoPanelProps) => {
 
     return (
         <article className="my-profile-info-panel">
