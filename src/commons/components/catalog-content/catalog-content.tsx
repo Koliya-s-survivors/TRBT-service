@@ -7,7 +7,21 @@ import CatalogContentItem from '../catalog-content-item';
 import './catalog-content.css';
 import './catalog-content-media.css';
 
-function CatalogContent(props) {   
+
+interface CatalogContentProps { 
+  objMelodies: Array<CatalogContentItemPropsMelody>
+}
+
+interface CatalogContentItemPropsMelody {
+  id:number,
+  img: any,
+  musicName: string,
+  artist: string,
+  price: number,
+}
+   
+
+function CatalogContent(props: CatalogContentProps) {
     return (
       <article className="catalog-content">
         <ul>
