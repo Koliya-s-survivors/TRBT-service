@@ -7,16 +7,16 @@ import CatalogContentItem from '../catalog-content-item';
 import './catalog-content.css';
 import './catalog-content-media.css';
 
-function CatalogContent(props) {   
-    return (
-      <article className="catalog-content">
-        <ul>
-          {props.objMelodies.map(function (item) {
-            return <CatalogContentItem key={item.id} melody={item} />
-          })}
-        </ul>
-      </article>       
-    )
-  }
- 
+function CatalogContent(props) {
+  return (
+    <article className="catalog-content">
+      <ul>
+        {props.objMelodies.map(function (item) {
+          return <CatalogContentItem key={item.id} melody={item} />
+        })}
+      </ul>
+    </article>
+  )
+}
+
 export default CatalogContent;
