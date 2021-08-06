@@ -9,7 +9,6 @@ export default class MyProfile extends Component {
     return (
       <>
         <MyProfileInfoPanel />
-        <MyProfileContentItem />
       </>
     )
   }
