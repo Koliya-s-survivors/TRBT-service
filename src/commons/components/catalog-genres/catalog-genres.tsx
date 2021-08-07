@@ -10,7 +10,7 @@ import './catalog-genres-media.css';
 // interface
 export interface CatalogGenresProps {
     genres: any[], //item description required
-    isActiveGenre: boolean,
+    isActiveGenre: string,
     genreClick: () => void
 }
 
