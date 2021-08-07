@@ -1,3 +1,3 @@
-import MyProfileContentItem from "./my-profile-content-item";
+import MyProfileContentItem from './my-profile-content-item';
 
 export default MyProfileContentItem;

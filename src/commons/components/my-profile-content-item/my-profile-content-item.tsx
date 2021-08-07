@@ -4,7 +4,6 @@ import React from 'react';
 import './my-profile-content-item.css'
 import './my-profile-content-item-media.css'
 
-
 interface MyProfileContentItemProps  {
   musicName: string,
   artist: string,
@@ -13,15 +12,18 @@ interface MyProfileContentItemProps  {
   paidPeriod: string,
 }
 
-
-const MyProfileContentItem = ({ img = 'someUrl', musicName = 'Тема усатого нян', artist = 'А. Рыбников', dataPurchase = '2017-06-22 10:33:14', paidPeriod = '2017-07-02 00:00:00' }:MyProfileContentItemProps) => {
-
+const MyProfileContentItem:React.FC<MyProfileContentItemProps> = (props) => {
+  const { img = 'someUrl',
+    musicName = 'Тема усатого нян',
+    artist = 'А. Рыбников',
+    dataPurchase = '2017-06-22 10:33:14',
+    paidPeriod = '2017-07-02 00:00:00' } = props // test props
+  
   return (
     <li className="my-profile-content-item">
     <article>
         <section>
           <article>
-            {/* <img src=`${img}` alt="img" /> */}
               <img src="./assets/img/Layer 6.png" alt="img" />
           </article>
           <article>
