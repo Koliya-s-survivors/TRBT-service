@@ -1,21 +1,23 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 // styles
 import './log-in-form.css'
 
-export default class LogInForm extends Component<{}, {}> {
+interface Props {}
+
+interface State {}
+
+export default class LogInForm extends Component<Props, State> {
     render() {
         return <article className="log-in-form">
             <section >
                 <h3>Authorize</h3>
                 <form>
-                    {/* @ts-ignore */}
-                    <label for="user_email">E-mail:</label>
+                    <label htmlFor="user_email">E-mail:</label>
                     <input name="email" type="text" id="user_email" />
                     <p></p>
                     
-                    {/* @ts-ignore */}
-                    <label for="user_password">Password:</label>
+                    <label htmlFor="user_password">Password:</label>
                     <input name="password" type="password" id="user_password" />
                     <p></p>
 
