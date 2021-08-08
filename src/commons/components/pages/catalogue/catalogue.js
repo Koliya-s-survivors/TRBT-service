@@ -3,8 +3,8 @@ import React, { Component } from "react";
 // components 
 import CatalogGenres from '../../catalog-genres';
 import CatalogCategories from '../../catalog-categories';
-import CatalogInfo from "../../catalog-info";
-import CatalogContent from "../../catalog-content";
+import CatalogInfo from '../../catalog-info';
+import CatalogContent from '../../catalog-content';
 
 export default class Catalogue extends Component {
   state = {
