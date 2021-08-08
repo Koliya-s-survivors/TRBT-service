@@ -1,0 +1,10 @@
+@media(min-width: 576px) {
+    .catalog-categories {
+        justify-content: flex-start;
+        text-align: start;
+        grid-template-columns: 120px 1fr;
+    }
+    .catalog-categories ul { 
+        grid-template-columns: repeat(auto-fill, 100px);
+    }
+}

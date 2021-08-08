@@ -1,0 +1,16 @@
+.catalog-categories {
+    display: grid;
+    justify-content: center;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.catalog-categories section p:nth-child(2) {
+    color: rgb(67,184,8);
+    margin-bottom: 10px;
+}
+
+.catalog-categories ul {
+    display: grid;
+    grid-row-gap: 5px;
+}

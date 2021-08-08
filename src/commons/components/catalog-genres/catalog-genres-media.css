@@ -1,9 +1,13 @@
 @media(min-width: 576px){
     .catalog-genres ul {
         grid-template-columns: repeat(auto-fill, 100px);
+        justify-content: flex-start;
     }
     .catalog-genres {
-        grid-template-columns: 100px 1fr;
+        grid-template-columns: 120px 1fr;
         align-items: center;
+    }
+    .catalog-genres section {
+        text-align: start;
     }
 }
