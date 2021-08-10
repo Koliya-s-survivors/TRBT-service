@@ -1,9 +1,9 @@
 import React from 'react';
 
-// CSS
+// style
 import './my-profile-content.css';
 
-
+// interface
 export interface MyProfileContentProps {
   sectionName: string,
   itemArray: any[] // item description required
