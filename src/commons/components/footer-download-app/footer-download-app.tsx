@@ -1,10 +1,12 @@
 import React from 'react';
-//CSS
+
+//styles
 import './footer-download-app.css';
 import './footer-download-app-media.css';
 
-const FooterDownloadApp:React.FC = () => {
-  // @ts-ignore
+interface Props { }
+
+const FooterDownloadApp:React.FC<Props> = () => {  
   return (
     <>
       <section className="footer-download-app">

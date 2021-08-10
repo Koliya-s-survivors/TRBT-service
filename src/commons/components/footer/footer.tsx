@@ -1,13 +1,18 @@
 import React from 'react';
-//CSS
-import './footer.css';
-import './footer-media.css';
+
 //components
 import FooterLogo from "../footer-logo";
 import FooterInfo from '../footer-info';
 import FooterDownloadApp from '../footer-download-app';
 
-const Footer:React.FC = () => {
+//styles
+import './footer.css';
+import './footer-media.css';
+
+
+interface Props { }
+
+const Footer:React.FC<Props> = () => {
   return (
       <footer className="footer">
         <FooterLogo/>
