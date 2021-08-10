@@ -1,9 +1,9 @@
 import React from 'react';
 
 // components
-import CatalogContentItem from '../catalog-content-item';
+import CatalogContentItem from '../catalog-content-item'
 
-// CSS
+// styles
 import './catalog-content.css';
 import './catalog-content-media.css';
 
@@ -17,7 +17,7 @@ interface CatalogContentItemPropsMelody {
   img: any,
   musicName: string,
   artist: string,
-  price: number,
+  price: string
 }
 
 

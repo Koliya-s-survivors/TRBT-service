@@ -2,9 +2,24 @@ import React, { Component } from "react";
 // components
 import CatalogContent from "../../catalog-content";
 
-export default class Catalogue extends Component {
-  state = {
-    objMelodies: [
+
+interface CatalogProps { }
+
+interface CatalogState {
+  arrMelodies: Array<objMelody>
+}
+
+interface objMelody {
+  id: number,
+  img: any,
+  musicName: string,
+  artist: string,
+  price: string
+}
+
+export default class Catalogue extends Component<CatalogProps, CatalogState> {
+  state: CatalogState = {
+    arrMelodies: [
       {
         id: 0,
         img: 'some text',
@@ -91,11 +106,11 @@ export default class Catalogue extends Component {
       },
     ],
   }
-  render() {    
+  render() {
     return (
       <>
         <section> This is Catalogue section</section>
-        <CatalogContent objMelodies={this.state.objMelodies} />
+        <CatalogContent arrMelodies={this.state.arrMelodies} />
       </>
     )
   }
