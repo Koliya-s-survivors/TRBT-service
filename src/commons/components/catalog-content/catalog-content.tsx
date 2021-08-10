@@ -8,29 +8,29 @@ import './catalog-content.css';
 import './catalog-content-media.css';
 
 
-interface CatalogContentProps { 
-  objMelodies: Array<CatalogContentItemPropsMelody>
+interface CatalogContentProps {
+  arrMelodies: Array<CatalogContentItemPropsMelody>
 }
 
 interface CatalogContentItemPropsMelody {
-  id:number,
+  id: number,
   img: any,
   musicName: string,
   artist: string,
   price: number,
 }
-   
 
-function CatalogContent(props: CatalogContentProps) {
-    return (
-      <article className="catalog-content">
-        <ul>
-          {props.objMelodies.map(function (item) {
-            return <CatalogContentItem key={item.id} melody={item} />
-          })}
-        </ul>
-      </article>       
-    )
-  }
- 
+
+const CatalogContent: React.FC<CatalogContentProps> = (props) => {
+  return (
+    <article className="catalog-content">
+      <ul>
+        {props.arrMelodies.map(function (item) {
+          return <CatalogContentItem key={item.id} melody={item} />
+        })}
+      </ul>
+    </article>
+  )
+}
+
 export default CatalogContent;
