@@ -1,16 +1,19 @@
 import React from 'react';
 
-// CSS
+// components 
+import MyProfileContentItem from '../my-profile-content-item';
+
+// styles
 import './my-profile-content.css';
 
 
-export interface MyProfileContentProps {
+interface MyProfileContentProps {
   sectionName: string,
   itemArray: any[] // item description required
 }
 
 
-const MyProfileContent: React.FunctionComponent<MyProfileContentProps> = ({ sectionName, itemArray }) => {
+const MyProfileContent: React.FC<MyProfileContentProps> = ({ sectionName, itemArray }) => {
   return (
     <article className="MyProfileContent">
       <section>

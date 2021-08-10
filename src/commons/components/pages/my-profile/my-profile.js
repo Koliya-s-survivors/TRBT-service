@@ -13,14 +13,16 @@ export default class MyProfile extends Component {
         img: 'some text',
         musicName: 'Hoolio Iglessias',
         artist: 'Hoolio Iglessias',
-        price: '$1',
+        dataPurchase = '2017-06-22 10:33:14',
+        paidPeriod = '2017-07-02 00:00:00'
       },
       {
         id: 1,
         img: 'some text2',
         musicName: 'Hoolio Iglessias2',
         artist: 'Hoolio Iglessias2',
-        price: '$2',
+        dataPurchase = '2017-06-22 10:33:14',
+        paidPeriod = '2017-07-02 00:00:00'
       },
     ]
   }
