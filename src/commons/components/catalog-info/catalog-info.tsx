@@ -1,21 +1,21 @@
 import React from 'react';
 
-// CSS
+// styles
 import './catalog-info.css';
 import './catalog-info-media.css';
 
 interface CatalogInfoProps {
-  activeGenre:string,
-  activeCategory:string
+  activeGenre: string,
+  activeCategory: string
 }
 
-function CatalogInfo(props: CatalogInfoProps){
-    return (
-      <article className='catalog-info'>
-        <p>Content from <span>"{props.activeGenre}/</span><span>{props.activeCategory}"</span></p>
-      </article>
-    )
-  
+const CatalogInfo: React.FC<CatalogInfoProps> = (props) => {
+  return (
+    <article className='catalog-info' >
+      <p>Content from <span>"{props.activeGenre}/</span><span>{props.activeCategory}"</span></p>
+    </article>
+  )
+
 }
 
 export default CatalogInfo;
