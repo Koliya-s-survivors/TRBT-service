@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 interface Props {}
 
- const MyProfileSettings:React.FC<Props> = () => {
+const MyProfileSettings: React.FC<Props> = () => {
     return (
         <>
             
         </>
     )
-}
+};
 
-export default MyProfileSettings
+export default MyProfileSettings;
