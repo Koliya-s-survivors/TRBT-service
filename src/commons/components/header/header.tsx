@@ -7,7 +7,7 @@ import HeaderNav from '../header-nav';
 // styles
 import './header.css';
 
-const Header = () => {
+const Header:React.FC = () => {
   return (
     <header className="header">
       <HeaderLogo/>
