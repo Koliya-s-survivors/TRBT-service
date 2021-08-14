@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import CatalogContentItem from '../catalog-content-item'
+import CatalogContentItem from '../catalog-content-item';
 
 // styles
 import './catalog-content.css';
