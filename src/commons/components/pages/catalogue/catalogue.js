@@ -258,19 +258,23 @@ export default class Catalogue extends Component {
    ],
     
     isActiveGenre: 'Из фильмов',
-    isActiveCategory: 'Классика',
+    isActiveCategory: '',
   }
 
 genreClick = (genre) => {
-    this.setState({isActiveGenre: genre});
+    this.setState({isActiveGenre: genre, isActiveCategory: ''});
   }
+
+categoryClick = (category) => {
+  this.setState({isActiveCategory: category});
+}
  
 render() {    
     return (
       <>
         <section> This is Catalogue section</section>
         <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
-        <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres}/>
+        <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres} isActiveCategory={this.state.isActiveCategory} categoryClick={this.categoryClick}/>
         <CatalogInfo activeGenre={this.state.isActiveGenre} activeCategory={this.state.isActiveCategory}/>
         <CatalogContent objMelodies={this.state.objMelodies} />         
        </>
