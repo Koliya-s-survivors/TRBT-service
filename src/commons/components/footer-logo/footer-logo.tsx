@@ -1,9 +1,12 @@
 import React from 'react';
-//CSS
+
+//styles
 import './footer-logo.css';
 import './footer-logo-media.css';
 
-const FooterLogo = () => {
+interface Props { }
+
+const FooterLogo:React.FC<Props> = () => {
   return (
     <section className="footer-logo">
       <img src="./assets/img/footer-img/logo.svg" alt="Telesens"/>
