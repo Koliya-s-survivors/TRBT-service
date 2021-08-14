@@ -3,11 +3,11 @@ import React from 'react';
 // components 
 import MyProfileContentItem from '../my-profile-content-item';
 
-// styles
+// style
 import './my-profile-content.css';
 
-
-interface MyProfileContentProps {
+// interface
+export interface MyProfileContentProps {
   sectionName: string,
   itemArray: any[] // item description required
 }
