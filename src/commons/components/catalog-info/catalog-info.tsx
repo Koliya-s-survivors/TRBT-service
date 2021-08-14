@@ -15,7 +15,6 @@ const CatalogInfo: React.FC<CatalogInfoProps> = (props) => {
       <p>Content from <span>"{props.activeGenre}/</span><span>{props.activeCategory}"</span></p>
     </article>
   )
-
 }
 
 export default CatalogInfo;
