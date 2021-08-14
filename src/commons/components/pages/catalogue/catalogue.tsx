@@ -1,24 +1,31 @@
 import React, { Component } from "react";
+
 // components
-import CatalogContent from "../../catalog-content";
+import CatalogGenres from '../../catalog-genres';
+import CatalogCategories from '../../catalog-categories';
+import CatalogInfo from '../../catalog-info';
+import CatalogContent from '../../catalog-content';
 
+interface Props { }
 
-interface CatalogProps { }
-
-interface CatalogState {
+interface State {
   arrMelodies: Array<objMelody>
+  genres: Array<any>
+  isActiveGenre: string
+  isActiveCategory: string
 }
 
 interface objMelody {
   id: number,
-  img: any,
+  img: string,
   musicName: string,
   artist: string,
   price: string
 }
 
-export default class Catalogue extends Component<CatalogProps, CatalogState> {
-  state: CatalogState = {
+
+export default class Catalogue extends Component<Props, State> {
+  state: State = {
     arrMelodies: [
       {
         id: 0,
@@ -105,11 +112,188 @@ export default class Catalogue extends Component<CatalogProps, CatalogState> {
         price: '$4',
       },
     ],
+
+     genres: [
+      {
+        id: 1,
+        genre: 'Из фильмов',
+        categories: [
+          {
+              id: 1,
+              fk_genres_id: 1,
+              title: 'Прочее'
+          },
+          {
+              id: 2,
+              fk_genres_id: 1,
+              title: 'Русские'
+          },
+          {
+              id: 3,
+              fk_genres_id: 1,
+              title: 'Зарубежные'
+          },
+          {
+              id: 4,
+              fk_genres_id: 1,
+              title: 'Советские'
+          }
+        ]
+      },
+      {
+        id: 2,
+        genre: 'Поп',
+        categories: [
+          {
+              id: 5,
+              fk_genres_id: 2,
+              title: 'Зарубежные'
+          },
+          {
+              id: 6,
+              fk_genres_id: 2,
+              title: 'Русские'
+          }
+        ]
+      },
+      {
+        id: 3,
+        genre: 'Рок',
+        categories: [
+          {
+              id: 5,
+              fk_genres_id: 2,
+              title: 'Зарубежные'
+          },
+          {
+              id: 6,
+              fk_genres_id: 2,
+              title: 'Русские'
+          }
+        ]
+      },
+      {
+        id: 4,
+        genre: 'Другое',
+        categories: [
+          {
+              id: 10,
+              fk_genres_id: 4,
+              title: 'Русские'
+          },
+          {
+              id: 11,
+              fk_genres_id: 4,
+              title: 'Зарубежные'
+          }
+        ]
+      },
+      {
+        id: 5,
+        genre: 'Dance',
+        categories: [
+          {
+              id: 12,
+              fk_genres_id: 5,
+              title: 'Русские'
+          },
+          {
+              id: 13,
+              fk_genres_id: 5,
+              title: 'Зарубежные'
+          }
+        ]
+      },
+      {
+        id: 6,
+        genre: 'Хип-хоп',
+        categories: [
+          {
+              id: 14,
+              fk_genres_id: 6,
+              title: 'Русские'
+          },
+          {
+              id: 15,
+              fk_genres_id: 6,
+              title: 'Зарубежные'
+          }
+        ]
+      },
+      {
+        id: 7,
+        genre: 'Приколы',
+        categories: [
+          {
+              id: 16,
+              fk_genres_id: 7,
+              title: 'Прочее'
+          }
+        ]
+      },
+      {
+        id: 8,
+        genre: 'Golden hits',
+        categories: [
+          {
+              id: 17,
+              fk_genres_id: 8,
+              title: 'Зарубежные'
+          },
+          {
+              id: 18,
+              fk_genres_id: 8,
+              title: 'Русские'
+          },
+          {
+              id: 19,
+              fk_genres_id: 8,
+              title: 'Советские'
+          }
+        ]
+      },
+      {
+        id: 10,
+        genre: 'Классика',
+        categories: [
+            {
+                id: 21,
+                fk_genres_id: 10,
+                title: 'Зарубежные'
+            },
+            {
+                id: 22,
+                fk_genres_id: 10,
+                title: 'Русские'
+            },
+            {
+                id: 23,
+                fk_genres_id: 10,
+                title: 'Без мелодий'
+            }
+        ]
+      }
+   ],
+
+    isActiveGenre: 'Из фильмов',
+    isActiveCategory: '',
   }
+
+  genreClick = (genre: string) => {
+    this.setState({isActiveGenre: genre, isActiveCategory: ''});
+  }
+
+  categoryClick = (category: string) => {
+    this.setState({isActiveCategory: category});
+  }
+
   render() {
     return (
       <>
         <section> This is Catalogue section</section>
+        <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
+        <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres} isActiveCategory={this.state.isActiveCategory} categoryClick={this.categoryClick}/>
+        <CatalogInfo activeGenre={this.state.isActiveGenre} activeCategory={this.state.isActiveCategory}/>
         <CatalogContent arrMelodies={this.state.arrMelodies} />
       </>
     )
