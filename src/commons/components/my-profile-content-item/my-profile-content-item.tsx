@@ -5,6 +5,11 @@ import './my-profile-content-item.css'
 import './my-profile-content-item-media.css'
 
 interface MyProfileContentItemProps  {
+  key: number,
+  melody: Melody  
+}
+
+interface Melody {
   musicName: string,
   artist: string,
   img: string,
@@ -17,7 +22,7 @@ const MyProfileContentItem:React.FC<MyProfileContentItemProps> = (props) => {
     musicName = 'Тема усатого нян',
     artist = 'А. Рыбников',
     dataPurchase = '2017-06-22 10:33:14',
-    paidPeriod = '2017-07-02 00:00:00' } = props // test props
+    paidPeriod = '2017-07-02 00:00:00' } = props.melody // test props
   
   return (
     <li className="my-profile-content-item">
