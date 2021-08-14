@@ -5,16 +5,9 @@
     align-items: center;
 }
 
-.catalog-genres-item ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-}
-
 .catalog-genres-item button {
     border: 2px solid rgb(67,184,8);
     border-radius: 10px;
-    height: 30px;
-    width: 95px;
 }
 
 .catalog-genres-item button:hover {

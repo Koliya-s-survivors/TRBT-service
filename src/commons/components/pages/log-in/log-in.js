@@ -1,12 +1,7 @@
-import React, { Component } from "react";
-
-// component
-import LogInForm from "../../log-in-form";
+import React, {Component} from "react";
 
 export default class LogIn extends Component {
-  render() {
-    return (
-      <LogInForm />
-    )
+  render () {
+    return <section> This is LogIn section</section>
   }
 }

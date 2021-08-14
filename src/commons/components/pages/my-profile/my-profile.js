@@ -1,14 +1,7 @@
-import React, { Component } from 'react';
-
-// components
-import MyProfileInfoPanel from '../../my-profile-info-panel';
+import React, {Component} from "react";
 
 export default class MyProfile extends Component {
-  render() {
-    return (
-      <>
-        <MyProfileInfoPanel />
-      </>
-    )
+  render () {
+    return <section> This is My profile section</section>
   }
 }

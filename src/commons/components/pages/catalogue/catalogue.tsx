@@ -1,14 +1,32 @@
 import React, { Component } from "react";
 
-// components 
+// components
 import CatalogGenres from '../../catalog-genres';
 import CatalogCategories from '../../catalog-categories';
 import CatalogInfo from '../../catalog-info';
 import CatalogContent from '../../catalog-content';
 
-export default class Catalogue extends Component {
-  state = {
-    objMelodies: [
+interface Props { }
+
+interface State {
+  arrMelodies: Array<objMelody>
+  genres: Array<any>
+  isActiveGenre: string
+  isActiveCategory: string
+}
+
+interface objMelody {
+  id: number,
+  img: string,
+  musicName: string,
+  artist: string,
+  price: string
+}
+
+
+export default class Catalogue extends Component<Props, State> {
+  state: State = {
+    arrMelodies: [
       {
         id: 0,
         img: 'some text',
@@ -94,7 +112,7 @@ export default class Catalogue extends Component {
         price: '$4',
       },
     ],
-    
+
      genres: [
       {
         id: 1,
@@ -256,29 +274,28 @@ export default class Catalogue extends Component {
         ]
       }
    ],
-    
+
     isActiveGenre: 'Из фильмов',
     isActiveCategory: '',
   }
 
-genreClick = (genre) => {
+  genreClick = (genre: string) => {
     this.setState({isActiveGenre: genre, isActiveCategory: ''});
   }
 
-categoryClick = (category) => {
-  this.setState({isActiveCategory: category});
-}
- 
-render() {    
+  categoryClick = (category: string) => {
+    this.setState({isActiveCategory: category});
+  }
+
+  render() {
     return (
       <>
         <section> This is Catalogue section</section>
         <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre} genreClick={this.genreClick}/>
         <CatalogCategories category={this.state.isActiveGenre} genres={this.state.genres} isActiveCategory={this.state.isActiveCategory} categoryClick={this.categoryClick}/>
         <CatalogInfo activeGenre={this.state.isActiveGenre} activeCategory={this.state.isActiveCategory}/>
-        <CatalogContent objMelodies={this.state.objMelodies} />         
-       </>
+        <CatalogContent arrMelodies={this.state.arrMelodies} />
+      </>
     )
   }
 }
-          

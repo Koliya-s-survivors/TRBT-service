@@ -1,3 +1,3 @@
-import MyProfile from './my-profile';
+import MyProfile from "./my-profile";
 
 export default MyProfile;

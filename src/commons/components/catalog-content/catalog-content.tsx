@@ -3,15 +3,29 @@ import React from 'react';
 // components
 import CatalogContentItem from '../catalog-content-item';
 
-// CSS
+// styles
 import './catalog-content.css';
 import './catalog-content-media.css';
 
-function CatalogContent(props) {
+
+interface CatalogContentProps {
+  arrMelodies: Array<CatalogContentItemPropsMelody>
+}
+
+interface CatalogContentItemPropsMelody {
+  id: number,
+  img: any,
+  musicName: string,
+  artist: string,
+  price: string
+}
+
+
+const CatalogContent: React.FC<CatalogContentProps> = (props) => {
   return (
     <article className="catalog-content">
       <ul>
-        {props.objMelodies.map(function (item) {
+        {props.arrMelodies.map(function (item) {
           return <CatalogContentItem key={item.id} melody={item} />
         })}
       </ul>

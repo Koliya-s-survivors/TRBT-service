@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
 
-
 // Routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// components 
-import Header from '../header';
+import NavigationMenu from '../navigation-menu';
 import { Catalogue, MyProfile, LogIn } from '../pages';
-import Footer from "../footer";
-
-
 
 export default class App extends Component {
   render() {
@@ -17,7 +12,9 @@ export default class App extends Component {
     return (
       <>
         <Router>
-          <Header/>        
+          <header>This is header tag</header>
+
+          <NavigationMenu />
 
           <section className={"searchPanel"}>This is search panel</section>
 
@@ -44,7 +41,7 @@ export default class App extends Component {
             </Switch>
           </main>
 
-          <Footer/>
+          <footer> This is footer tag</footer>
         </Router>
 
       </>
