@@ -1,15 +1,26 @@
 import React from 'react';
 
-// CSS
+// styles
 import './catalog-content-item.css';
 
-function CatalogContentItem(props) {
+interface CatalogContentItemProps {
+  id: number,
+  melody: CatalogContentItemPropsMelody
+}
+
+interface CatalogContentItemPropsMelody {
+  img: any,
+  musicName: string,
+  artist: string,
+  price: number,
+}
+
+const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
   const { img, musicName, artist, price } = props.melody;
 
   return (
     <li className="catalog-content-list-item">
-    <article>
-        {/* <div>{ img }</div> */}
+      <article>        
         <section>
           <img src="./assets/img/Layer 6.png" alt="img" />
         </section>
@@ -23,7 +34,7 @@ function CatalogContentItem(props) {
           <a href="#"><img src="./assets/img/catalog-content-list-item-icon/gift.png" alt="icon" /></a>
           <a href="#"><img src="./assets/img/catalog-content-list-item-icon/info.png" alt="icon" /></a>
         </section>
-    </article>
+      </article>
     </li>
   )
 }
