@@ -8,7 +8,7 @@ interface MyProfileInfoPanelProps {
     loginedEmail: string,
 }
 
-const MyProfileInfoPanel: React.FC<MyProfileInfoPanelProps> = ({ loginedEmail = 'defaultEmail@gmail.com' }: MyProfileInfoPanelProps) => {
+const MyProfileInfoPanel: React.FC<MyProfileInfoPanelProps> = ({ loginedEmail = 'defaultEmail@gmail.com' }) => {
 
     return (
         <article className="my-profile-info-panel">
