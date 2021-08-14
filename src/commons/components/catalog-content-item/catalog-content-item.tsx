@@ -4,23 +4,22 @@ import React from 'react';
 import './catalog-content-item.css';
 
 interface CatalogContentItemProps {
-  id: number,
   melody: CatalogContentItemPropsMelody
 }
 
 interface CatalogContentItemPropsMelody {
   img: any,
-  musicName: string,
-  artist: string,
-  price: number,
+  musicName: string
+  artist: string
+  price: string
 }
 
 const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
-  const { img, musicName, artist, price } = props.melody;
+  const { musicName, artist, price } = props.melody;
 
   return (
     <li className="catalog-content-list-item">
-      <article>        
+      <article>
         <section>
           <img src="./assets/img/Layer 6.png" alt="img" />
         </section>

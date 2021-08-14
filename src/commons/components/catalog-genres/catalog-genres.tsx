@@ -11,7 +11,7 @@ import './catalog-genres-media.css';
 export interface CatalogGenresProps {
     genres: any[], //item description required
     isActiveGenre: string,
-    genreClick: () => void
+    genreClick: (genre: string) => void
 }
 
 const CatalogGenres: React.FunctionComponent<CatalogGenresProps> = ({genres, isActiveGenre, genreClick}) => {
