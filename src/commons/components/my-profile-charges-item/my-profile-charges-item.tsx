@@ -1,8 +1,7 @@
 import React from 'react';
 
-//components
-
 //styles
+import './my-profile-charges-item.css'
 
 interface MyProfileChargesItemProps {
     charge:Data
@@ -18,7 +17,7 @@ interface Data {
 const MyProfileChargesItem: React.FC<MyProfileChargesItemProps> = (props) => {
     const { content, service, amount, date} = props.charge
     return (
-        <tr>
+        <tr className="my-profile-charges-item">
             <td>{content}</td>
             <td>{service}</td>
             <td>{amount}</td>

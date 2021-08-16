@@ -8,3 +8,8 @@
 .my-profile-charges table {
   background: darkgrey;
 }
+
+.my-profile-charges table > tr > th {
+  text-align: left;
+  padding: 5px;
+}
