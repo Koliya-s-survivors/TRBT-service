@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './header-nav.css';
 
 const HeaderNav:React.FC = () => {
-  return <nav className="header-nav">
+  return<nav className="header-nav">
     <Link className="header-nav-catalogue" to="/">
       <p>Catalogue</p>
       </Link>
