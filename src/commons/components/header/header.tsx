@@ -5,32 +5,36 @@ import HeaderLogo from '../header-logo';
 import HeaderNav from '../header-nav';
 
 //@material
-import {AppBar, Container, Toolbar, Grid} from "@material-ui/core";
+import { AppBar, Container, Toolbar, Grid, makeStyles } from "@material-ui/core";
 
 // styles
-import './header.css';
+const useStyles = makeStyles((theme) => ({    
+        header: {
+        background:theme.palette.background.paper,
+        boxShadow:'none',
+        }
+    }
+));
 
-const Header:React.FC = () => {
-  return (
-      <AppBar position="static">
-          <Container fixed >
-              <Toolbar>
-                 <Grid container xs={12} sm={6} md={4}>
-                     <Grid item >
-                         <HeaderLogo/>
-                     </Grid>
-                     <Grid item >
-                         <HeaderNav/>
-                     </Grid>
-                 </Grid>
-              </Toolbar>
-          </Container>
-      </AppBar>
-    // <header className="header">
-    //   <HeaderLogo/>
-    //   <HeaderNav/>
-    // </header>
-  )
+const Header: React.FC = () => {
+    const headerClasses = useStyles();
+    return (
+        <AppBar position="static" className={headerClasses.header}>
+            <Container fixed >
+                <Toolbar >
+                    <Grid container >
+                        <Grid item xs={12}>
+                            <HeaderLogo />
+                        </Grid>
+                        <Grid item xs={12}>
+                            <HeaderNav />
+                        </Grid>
+                    </Grid>
+                </Toolbar>
+            </Container>
+        </AppBar>
+
+    )
 };
 
 export default Header;
