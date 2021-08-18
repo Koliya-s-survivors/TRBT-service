@@ -5,10 +5,6 @@ import { Typography, makeStyles} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 // styles
-import './header-logo.css';
-
-interface Props { }
-
 const useStyles = makeStyles((theme) => ({ 
   headerLogo: {
     fontSize: '3rem',
@@ -20,6 +16,7 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
+interface Props { }
 
 const HeaderLogo: React.FC<Props> = () => {
   const headerLogoClasses = useStyles();
