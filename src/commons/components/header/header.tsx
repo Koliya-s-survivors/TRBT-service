@@ -23,12 +23,8 @@ const Header: React.FC = () => {
             <Container fixed >
                 <Toolbar >
                     <Grid container >
-                        <Grid item xs={12}>
-                            <HeaderLogo />
-                        </Grid>
-                        <Grid item xs={12}>
+                            <HeaderLogo/>
                             <HeaderNav />
-                        </Grid>
                     </Grid>
                 </Toolbar>
             </Container>
