@@ -12,10 +12,7 @@ const Header:React.FC = () => {
     <header className="header">
       <HeaderLogo/>
       <HeaderNav/>
-      </header>
-
-      
-    
+      </header>         
   )
 };
 
