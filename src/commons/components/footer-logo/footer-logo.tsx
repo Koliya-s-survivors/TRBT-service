@@ -1,16 +1,16 @@
 import React from 'react';
 
-//styles
-import './footer-logo.css';
-import './footer-logo-media.css';
+// components
+import FooterIcon from '../footer-icon';
+ 
+// @material
+import { Grid } from '@material-ui/core';
 
-interface Props { }
-
-const FooterLogo:React.FC<Props> = () => {
+const FooterLogo: React.FC = () => {
   return (
-    <section className="footer-logo">
-      <img src="./assets/img/footer-img/logo.svg" alt="Telesens"/>
-    </section>
+    <Grid item xs={12}>
+      <FooterIcon />
+    </Grid>
   );
 }
 
