@@ -1,20 +1,11 @@
 import React from 'react';
 
 // @material
-import { Typography, makeStyles, Grid} from '@material-ui/core';
+import { Typography, Grid} from '@material-ui/core';
 import { Link } from 'react-router-dom';
 
 // styles
-const useStyles = makeStyles((theme) => ({ 
-  headerLogo: {
-    fontSize: '2.5rem',
-    fontWeight: 'bold',
-    color: '#64DD17',
-    '@media (min-width:600px)': {
-      fontSize: '4.5rem',
-    },    
-  }
-}));
+import useStyles from './header-logo-styles';
 
 interface Props { }
 
