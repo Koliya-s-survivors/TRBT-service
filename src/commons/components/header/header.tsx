@@ -8,13 +8,7 @@ import HeaderNav from '../header-nav';
 import { AppBar, Container, Toolbar, Grid, makeStyles } from "@material-ui/core";
 
 // styles
-const useStyles = makeStyles((theme) => ({    
-        header: {
-        background:theme.palette.background.paper,
-        boxShadow:'none',
-        }
-    }
-));
+import useStyles from './header-styles';
 
 const Header: React.FC = () => {
     const headerClasses = useStyles();
