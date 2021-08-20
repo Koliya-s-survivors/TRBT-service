@@ -5,20 +5,26 @@ import FooterLogo from "../footer-logo";
 import FooterInfo from '../footer-info';
 import FooterDownloadApp from '../footer-download-app';
 
+// @material
+import { Container, Grid } from '@material-ui/core';
+
 //styles
-import './footer.css';
-import './footer-media.css';
+import useStyles from './footer-styles';
 
-
-interface Props { }
-
-const Footer:React.FC<Props> = () => {
+const Footer: React.FC = () => {
+  const foterClasses = useStyles();
   return (
-      <footer className="footer">
-        <FooterLogo/>
-        <FooterInfo/>
-        <FooterDownloadApp/>
-      </footer>
+    <Container  component="footer" fixed className={foterClasses.container}>
+      <Grid container xs={12} >
+          <FooterLogo/>
+        <Grid item xs={12} sm={9} className={foterClasses.info}>
+          <FooterInfo/>
+        </Grid>
+        <Grid item xs className={foterClasses.info}>
+          <FooterDownloadApp/>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 
