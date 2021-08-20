@@ -3,10 +3,11 @@ import React from 'react';
 // components
 import CatalogContentItem from '../catalog-content-item';
 
-// styles
-import './catalog-content.css';
-import './catalog-content-media.css';
+// @material
+import { Container, Grid } from '@material-ui/core';
 
+// styles
+import useStyles from './catalog-content-styles';
 
 interface CatalogContentProps {
   arrMelodies: Array<CatalogContentItemPropsMelody>
@@ -20,16 +21,16 @@ interface CatalogContentItemPropsMelody {
   price: string
 }
 
-
 const CatalogContent: React.FC<CatalogContentProps> = (props) => {
+  const CatalogContentClasses = useStyles()
   return (
-    <article className="catalog-content">
-      <ul>
-        {props.arrMelodies.map(function (item) {
-          return <CatalogContentItem key={item.id} melody={item} />
-        })}
-      </ul>
-    </article>
+    <Container className={CatalogContentClasses.cardGrid} maxWidth="lg">
+      <Grid container spacing={4}>
+        {props.arrMelodies.map(item =>
+          <CatalogContentItem key={item.id} melody={item} />
+        )}
+      </Grid>
+    </Container>
   )
 }
 
