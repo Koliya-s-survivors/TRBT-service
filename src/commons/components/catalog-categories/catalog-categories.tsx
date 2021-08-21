@@ -10,7 +10,7 @@ import {Grid, Typography, Box} from '@material-ui/core'
 import useStyles from './catalog-categories-styles'
 
 // interface
-import {Category} from '../pages/catalogue/catalogue';
+import { Category } from '../../api/service/types';
 
 interface CatalogCategoriesProps {
     categories: Category[]
