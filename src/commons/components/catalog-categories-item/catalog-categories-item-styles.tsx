@@ -6,7 +6,8 @@ const useStyles = makeStyles(() => ({
         borderWidth: "2px",
         "&:hover": {
             background: "#64DD17",
-        }
+        },
+        borderRadius: "10px"
     },
     buttonAction: {
         borderColor: "#64DD17",
@@ -15,10 +16,12 @@ const useStyles = makeStyles(() => ({
         color: "white",
         "&:hover": {
             background: "rgba(100, 221, 23, 0.6)",
-        }
+        },
+        borderRadius: "10px"
     },
     distanceForBtn: {
-        marginRight: "10px"
+        marginRight: "10px",
+        paddingBottom: "5px"
     }
 }))
 
