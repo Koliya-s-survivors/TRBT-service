@@ -4,8 +4,8 @@ import React from 'react';
 import CatalogGenresItem from '../catalog-genres-item';
 
 // style
-import './catalog-genres.css';
-import './catalog-genres-media.css';
+import useStyles from './catalog-genres-styles';
+import {Box, Container, Grid, Typography} from "@material-ui/core";
 
 // interface
 export interface CatalogGenresProps {
@@ -15,17 +15,20 @@ export interface CatalogGenresProps {
 }
 
 const CatalogGenres: React.FunctionComponent<CatalogGenresProps> = ({genres, isActiveGenre, genreClick}) => {
+    const catalogGenresClasses = useStyles();
     return(
-        <article className='catalog-genres'>
-            <section>
-                <p>Genres</p>
-            </section>
-            <ul>
-                {genres.map(item => {
-                    return <CatalogGenresItem key={item.id} isActiveGenre={isActiveGenre} genre={item.genre} genreClick={genreClick}/>
-                })}
-            </ul>
-        </article>
+        <Box py={2}>
+            <Container fixed maxWidth="md">
+                <Typography variant="h5">
+                    Genres
+                </Typography>
+                <Grid container spacing={4}>
+                    {genres.map(item => {
+                        return <CatalogGenresItem key={item.id} isActiveGenre={isActiveGenre} genre={item.genre} genreClick={genreClick}/>
+                    })}
+                </Grid>
+            </Container>
+        </Box>
     );
 }
 
