@@ -28,13 +28,16 @@ export default class Catalogue extends Component<Props, State> {
     render() {
         // @ts-ignore
         const categories: Category[] = this.state.genres.find(item => item.genre === this.state.isActiveGenre).categories
+        // @ts-ignore
+        const activeCategory = this.state.isActiveCategory ? this.state.isActiveCategory : this.categoryClick(categories[0].title);
+
         return (
             <>
-                <section> This is Catalogue section</section>
                 <CatalogGenres genres={this.state.genres} isActiveGenre={this.state.isActiveGenre}
                                genreClick={this.genreClick}/>
                 <CatalogCategories categories={categories} activeGenre={this.state.isActiveGenre}
-                                   isActiveCategory={this.state.isActiveCategory} categoryClick={this.categoryClick}/>
+                // @ts-ignore
+                                   isActiveCategory={activeCategory} categoryClick={this.categoryClick}/>
                 <CatalogInfo activeGenre={this.state.isActiveGenre} activeCategory={this.state.isActiveCategory}/>
                 <CatalogContent arrMelodies={this.state.arrMelodies}/>
             </>

@@ -19,7 +19,7 @@ const CatalogCategoriesItem: React.FunctionComponent<CatalogCategoriesItemProps>
     categoryClick
 }) => {
     const catalogCategoriesItemClasses = useStyles();
-
+ 
     const styleButton = (isActiveCategory === category) ? catalogCategoriesItemClasses.buttonAction : catalogCategoriesItemClasses.button
 
     function onClick() {
@@ -27,7 +27,7 @@ const CatalogCategoriesItem: React.FunctionComponent<CatalogCategoriesItemProps>
     }
 
     return (
-        <Box className={catalogCategoriesItemClasses.distanceForBtn}>
+        <Box p={0.3}>
             <Button variant={"outlined"} className={styleButton} onClick={onClick}>
                 {category}
             </Button>
