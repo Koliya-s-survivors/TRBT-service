@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 // @material
-import {Grid, Typography, TextField, Button} from '@material-ui/core';
+import {Grid, Typography, TextField, Button, withStyles} from '@material-ui/core';
 
 // Style
 import useStyles from './catalog-search-panel-styles';
@@ -10,6 +10,22 @@ import useStyles from './catalog-search-panel-styles';
 interface CatalogSearchPanelProps {
     onSearch: (stateValue: string) => void
 }
+
+const CSSTextField = withStyles({
+    root: {
+        '& .MuiOutlinedInput-root': {
+            '&.Mui-focused fieldset': {
+                borderColor: 'white',
+            }
+        },
+        '& label.Mui-focused': {
+            color: 'white',
+        },
+        '& input': {
+            color: 'white'
+        }
+    }
+})(TextField)
 
 const CatalogSearchPanel: React.FunctionComponent<CatalogSearchPanelProps> = ({onSearch}) => {
     const [value, setValue] = useState('');
@@ -38,8 +54,12 @@ const CatalogSearchPanel: React.FunctionComponent<CatalogSearchPanelProps> = ({o
                     </Grid>
                 </Grid>
                 <Grid item xs={12}>
-                    <TextField size="small" variant="outlined" className={classes.input} label="Search"
-                               onChange={onChange}/>
+                    <CSSTextField size="small"
+                               variant="outlined"
+                               className={classes.input}
+                               label="Search"
+                               onChange={onChange}
+                    />
                     <Button variant="contained" className={classes.button} onClick={onClick}>
                         <svg width="1.25em" viewBox="0 0 512 512">
                             <path fill="currentColor"
