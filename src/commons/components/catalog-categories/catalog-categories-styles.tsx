@@ -9,6 +9,9 @@ const useStyles = makeStyles(() => ({
     title: {
         paddingRight: '10px',
         minWidth: '150px'
+    },
+    text: {
+        color: "#64DD17"
     }
 }))
 
