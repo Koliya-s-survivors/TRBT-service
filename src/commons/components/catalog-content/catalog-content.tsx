@@ -6,24 +6,19 @@ import CatalogContentItem from '../catalog-content-item';
 // @material
 import { Container, Grid, Box } from '@material-ui/core';
 
+// interface
+import { Melody } from '../../api/service/types';
+
 interface CatalogContentProps {
-  arrMelodies: Array<CatalogContentItemPropsMelody>
+  arrMelodies: Melody[]
 }
 
-interface CatalogContentItemPropsMelody {
-  id: number,
-  img: any,
-  musicName: string,
-  artist: string,
-  price: string
-}
-
-const CatalogContent: React.FC<CatalogContentProps> = (props) => {
+const CatalogContent: React.FC<CatalogContentProps> = ({arrMelodies}) => {
   return (
     <Box py={4}>
       <Container fixed maxWidth="md">
       <Grid container spacing={4}>
-        {props.arrMelodies.map(item =>
+        {arrMelodies.map(item =>
           <CatalogContentItem key={item.id} melody={item} />
         )}
       </Grid>

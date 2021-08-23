@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // @material
-import { Card, CardContent, CardMedia, TextField, Grid, Typography, } from '@material-ui/core';
+import { Card, CardContent, CardMedia,Grid, Typography, } from '@material-ui/core';
 import InfoOutlinedIcon from '@material-ui/icons/InfoOutlined';
 import CardGiftcardOutlinedIcon from '@material-ui/icons/CardGiftcardOutlined';
 import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
@@ -27,7 +27,7 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
   const catalogContentItemClasses: any = useStyles();
 
   return (
-    <Grid item key={props.key} xs={12} sm={6} md={4}>
+    <Grid item  xs={12} sm={6} md={4}>
       <Card className={catalogContentItemClasses.card}>
         <CardMedia
           className={catalogContentItemClasses.cardMedia}
@@ -42,13 +42,13 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
             {artist}
           </Typography>
         </CardContent>
-        <Grid container xs={12} className={catalogContentItemClasses.grid}>
+        <Grid container className={catalogContentItemClasses.grid}>
           <Grid item xs={7} >
             <Typography variant='h6' className={catalogContentItemClasses.price}>
               {price}
             </Typography>
           </Grid>
-          <Grid xs={5} className={catalogContentItemClasses.blockIcon}>
+          <Grid item xs={5} className={catalogContentItemClasses.blockIcon}>
             <Link to='/' className={catalogContentItemClasses.link}>
               <ShoppingCartOutlinedIcon />
             </Link>

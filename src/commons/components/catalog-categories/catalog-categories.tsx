@@ -26,23 +26,34 @@ const CatalogCategories: React.FunctionComponent<CatalogCategoriesProps> = ({
     activeGenre
 }) => {
 
-    const classes = useStyles();
+
+    const { containerPositioning } = useStyles();
     return (
-        <>
-        <Grid item xs={12} className={classes.gridContainer}>
-            <Box className={classes.title}>
-                <Typography variant={"h6"}>Categories</Typography>
-                <Typography variant={"h6"} className={classes.text}>"{activeGenre}"</Typography>
-            </Box>
-                <Grid container direction={'row'} justifyContent={'flex-start'} alignContent={'center'} >
+        <Box p={1}>
+            <Grid container direction={'row'} justifyContent={'center'} alignContent={'center'}>
+                <Grid container 
+                    direction={'row'}
+                    justifyContent={'center'}
+                    alignContent={'center'}
+                    item xs={12} sm={3} 
+                    className={containerPositioning}>
+                    <Typography variant={"subtitle1"}>{`Categories: ${activeGenre}`}</Typography>
+                </Grid>
+                <Grid container 
+                    direction={'column'}
+                    justifyContent={'center'}
+                    alignContent={'center'}
+                    item xs={12} sm={9} 
+                    className={containerPositioning}>
+
                     {categories.map(item => {
                         return <CatalogCategoriesItem key={item.id} category={item.title} categoryClick={categoryClick}
-                                                      isActiveCategory={isActiveCategory}/>
+                            isActiveCategory={isActiveCategory} />
                     })}
                 </Grid>
-        </Grid>
-        <Divider/>
-        </>
+            </Grid>
+            <Divider/>
+        </Box>
     );
 }
 
