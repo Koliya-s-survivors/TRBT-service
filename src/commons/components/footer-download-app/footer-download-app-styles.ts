@@ -1,16 +1,16 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   title: {
     textAlign: 'center',
   },
   androidIcon: {
-    fontSize: "100px",
+    fontSize: "110px",
     color: '#689f38',
   },
   appleIcon: {
-    fontSize: "110px",
-    color: '#e0e0e0',
+    fontSize: "120px",
+    color: '#e0e0e0',    
   },
 }))
 

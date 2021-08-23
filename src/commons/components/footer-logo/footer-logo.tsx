@@ -2,15 +2,15 @@ import React from 'react';
 
 // components
 import FooterIcon from '../footer-icon';
- 
+
 // @material
-import { Grid } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 
 const FooterLogo: React.FC = () => {
   return (
-    <Grid item xs={12}>
+    <Box p={1}>
       <FooterIcon />
-    </Grid>
+    </Box>
   );
 }
 

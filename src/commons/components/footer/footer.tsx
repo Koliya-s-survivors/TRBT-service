@@ -6,25 +6,27 @@ import FooterInfo from '../footer-info';
 import FooterDownloadApp from '../footer-download-app';
 
 // @material
-import { Container, Grid } from '@material-ui/core';
+import { Box, Container, Grid } from '@material-ui/core';
 
 //styles
 import useStyles from './footer-styles';
 
 const Footer: React.FC = () => {
-  const foterClasses = useStyles();
+  const footerClasses = useStyles();
   return (
-    <Container  component="footer" fixed className={foterClasses.container}>
-      <Grid container>
-          <FooterLogo/>
-        <Grid item xs={12} sm={9} className={foterClasses.info}>
-          <FooterInfo/>
-        </Grid>
-        <Grid item xs className={foterClasses.info}>
-          <FooterDownloadApp/>
+    <Box p={1} className={footerClasses.container}>
+      <Grid container item xs={12}
+        justifyContent={'center'}
+        alignContent={'center'}>
+        <Grid item xs={12} sm={9} >
+          <FooterLogo />
+          <FooterInfo />
+        </Grid>        
+        <Grid item xs={12} sm={3}  >
+          <FooterDownloadApp />
         </Grid>
       </Grid>
-    </Container>
+    </Box>
   );
 }
 
