@@ -14,7 +14,7 @@ const Header: React.FC = () => {
     const headerClasses = useStyles();
     return (
         <AppBar position="static" className={headerClasses.header}>
-            <Container fixed maxWidth='lg'>
+            <Container fixed maxWidth='md'>
                 <Toolbar >
                     <Grid container>
                             <Grid item xs={12}>
