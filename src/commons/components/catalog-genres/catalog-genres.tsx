@@ -1,34 +1,40 @@
 import React from 'react';
 
 // components
-import CatalogGenresItem from '../catalog-genres-item';
+import CatalogCategoriesItem from '../catalog-categories-item';
+
+// @material
+import {Box, Grid, Typography, Divider} from '@material-ui/core';
 
 // style
 import useStyles from './catalog-genres-styles';
-import {Box, Container, Grid, Typography} from "@material-ui/core";
 
 // interface
+import { Genre } from '../../api/service/types'
+
 export interface CatalogGenresProps {
-    genres: any[], //item description required
+    genres: Genre[], //item description required
     isActiveGenre: string,
     genreClick: (genre: string) => void
 }
 
 const CatalogGenres: React.FunctionComponent<CatalogGenresProps> = ({genres, isActiveGenre, genreClick}) => {
-    const catalogGenresClasses = useStyles();
+    const classes = useStyles();
     return(
-        <Box py={2}>
-            <Container fixed maxWidth="md">
-                <Typography variant="h5">
-                    Genres
-                </Typography>
-                <Grid container spacing={4}>
-                    {genres.map(item => {
-                        return <CatalogGenresItem key={item.id} isActiveGenre={isActiveGenre} genre={item.genre} genreClick={genreClick}/>
-                    })}
-                </Grid>
-            </Container>
-        </Box>
+        <>
+        <Grid item xs={12} className={classes.gridContainer}>
+            <Box className={classes.title}>
+                <Typography variant={"h6"}>Genres</Typography>
+            </Box>
+            <Grid container direction={'row'} justifyContent={'flex-start'} alignContent={'center'} >
+                {genres.map(item => {
+                    return <CatalogCategoriesItem key={item.id} category={item.genre} categoryClick={genreClick}
+                                                  isActiveCategory={isActiveGenre}/>
+                })}
+            </Grid>
+        </Grid>
+        <Divider/>
+        </>
     );
 }
 
