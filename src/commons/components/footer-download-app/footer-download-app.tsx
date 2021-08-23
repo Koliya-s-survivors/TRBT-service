@@ -1,7 +1,7 @@
 import React from 'react';
 
 // @material
-import { Grid, Typography } from '@material-ui/core';
+import { Box, Grid, Typography } from '@material-ui/core';
 import AndroidOutlinedIcon from '@material-ui/icons/AndroidOutlined';
 import AppleIcon from '@material-ui/icons/Apple';
 
@@ -13,17 +13,23 @@ interface Props { }
 const FooterDownloadApp: React.FC<Props> = () => {
   const footerDownloadAppClasses = useStyles();
   return (
-    <Grid container alignItems="center">
+    <Box p={1}>
+      <Grid container item xs={12} spacing={2} direction={'row'} alignContent={'center'} justifyContent={'center'} >
         <Grid item xs={12} className={footerDownloadAppClasses.title}>
-          <Typography component="h3" variant="h5" >
+          <Typography component="h3" variant="h5">
             Download app
           </Typography>
         </Grid>
-        <Grid item xs={12} className={footerDownloadAppClasses.title}>
-          <AndroidOutlinedIcon fontSize="large" className={footerDownloadAppClasses.androidIcon} />
-          <AppleIcon fontSize="large" className={footerDownloadAppClasses.appleIcon} />
+        <Grid container item xs={12} alignContent={'center'} justifyContent={'center'}  >
+          <Grid item  >
+            <AndroidOutlinedIcon fontSize="large" className={footerDownloadAppClasses.androidIcon} />
+          </Grid>
+          <Grid item  >
+            <AppleIcon fontSize="large" className={footerDownloadAppClasses.appleIcon} />
+          </Grid>
         </Grid>
-    </Grid >
+      </Grid >
+    </Box>
   );
 }
 
