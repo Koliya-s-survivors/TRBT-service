@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // styles
 import './my-profile-info-panel.css';

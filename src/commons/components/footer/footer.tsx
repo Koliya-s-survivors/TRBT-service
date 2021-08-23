@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
   const foterClasses = useStyles();
   return (
     <Container  component="footer" fixed className={foterClasses.container}>
-      <Grid container xs={12} >
+      <Grid container>
           <FooterLogo/>
         <Grid item xs={12} sm={9} className={foterClasses.info}>
           <FooterInfo/>

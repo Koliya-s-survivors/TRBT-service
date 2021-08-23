@@ -5,7 +5,7 @@ import HeaderLogo from '../header-logo';
 import HeaderNav from '../header-nav';
 
 //@material
-import { AppBar, Container, Toolbar, Grid, makeStyles } from "@material-ui/core";
+import { AppBar, Container, Toolbar, Grid} from "@material-ui/core";
 
 // styles
 import useStyles from './header-styles';

@@ -13,8 +13,7 @@ interface Props { }
 const FooterDownloadApp: React.FC<Props> = () => {
   const footerDownloadAppClasses = useStyles();
   return (
-    <Grid item xs={12} alignItems="center">
-      <Grid container xs={12} >
+    <Grid container alignItems="center">
         <Grid item xs={12} className={footerDownloadAppClasses.title}>
           <Typography component="h3" variant="h5" >
             Download app
@@ -24,7 +23,6 @@ const FooterDownloadApp: React.FC<Props> = () => {
           <AndroidOutlinedIcon fontSize="large" className={footerDownloadAppClasses.androidIcon} />
           <AppleIcon fontSize="large" className={footerDownloadAppClasses.appleIcon} />
         </Grid>
-      </Grid>
     </Grid >
   );
 }
