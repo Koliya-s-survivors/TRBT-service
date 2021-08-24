@@ -41,12 +41,11 @@ export default class Catalogue extends Component<Props, State> {
     return (
       <Box p={1.25}>
         <Grid
-          container
           direction="row"
           justifyContent="center"
           alignContent="center"
         >
-          {/* <CatalogSearchPanel /> */}
+          <CatalogSearchPanel onSearch={() => {}}/>
           <CatalogGenres
             genres={this.state.genres}
             isActiveGenre={this.state.isActiveGenre}
@@ -59,7 +58,6 @@ export default class Catalogue extends Component<Props, State> {
             isActiveCategory={activeCategory}
             categoryClick={this.categoryClick}
           />
-
           <CatalogInfo
             activeGenre={this.state.isActiveGenre}
             activeCategory={this.state.isActiveCategory}
