@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // components
 import Header from '../header';
 import { Catalogue, MyProfile, LogIn } from '../pages';
-import CatalogSearchPanel from '../catalog-search-panel';
 import Footer from "../footer";
 
 
@@ -18,8 +17,6 @@ export default class App extends Component {
       <>
         <Router>
           <Header/>
-
-          <CatalogSearchPanel onSearch={() => {}}/>
           <main>
             <Switch>
               <Route
