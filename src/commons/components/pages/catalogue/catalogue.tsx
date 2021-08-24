@@ -40,7 +40,7 @@ export default class Catalogue extends Component<Props, State> {
 
     return (
       <Box p={1.25}>
-        <Grid
+        <Grid container
           direction="row"
           justifyContent="center"
           alignContent="center"
