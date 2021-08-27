@@ -45,24 +45,35 @@ export default class Catalogue extends Component<Props, State> {
           justifyContent="center"
           alignContent="center"
         >
-          <CatalogSearchPanel onSearch={() => {}}/>
-          <CatalogGenres
+          <Grid item xs={12}>
+            <CatalogSearchPanel onSearch={() => {}}/>
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogGenres
             genres={this.state.genres}
             isActiveGenre={this.state.isActiveGenre}
             genreClick={this.genreClick}
           />
-          <CatalogCategories
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogCategories
             categories={categories}
             activeGenre={this.state.isActiveGenre}
             // @ts-ignore
             isActiveCategory={activeCategory}
             categoryClick={this.categoryClick}
           />
-          <CatalogInfo
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogInfo
             activeGenre={this.state.isActiveGenre}
             activeCategory={this.state.isActiveCategory}
           />
-          <CatalogContent arrMelodies={this.state.arrMelodies} />
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogContent arrMelodies={this.state.arrMelodies} />
+          </Grid>
+          
         </Grid>
       </Box>
     );
