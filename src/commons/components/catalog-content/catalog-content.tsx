@@ -17,7 +17,7 @@ const CatalogContent: React.FC<CatalogContentProps> = ({arrMelodies}) => {
   return (
     <Box py={4}>
       <Container fixed maxWidth="md">
-      <Grid container spacing={4}>
+      <Grid container spacing={4} justifyContent="center">
         {arrMelodies.map(item =>
           <CatalogContentItem key={item.id} melody={item} />
         )}
