@@ -9,65 +9,73 @@ import CatalogSearchPanel from '../../catalog-search-panel';
 import service from '../../../api/service';
 
 // @material
-import {Grid, Box} from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 
 // interface
-import {Service, Category} from '../../../api/service/types';
+import { Service } from '../../../api/service/types';
+interface Props {}
 
-interface Props {
-}
-
-interface State extends Service {
-}
+interface State extends Service {}
 
 export default class Catalogue extends Component<Props, State> {
-    state: State = service;
+  state: State = service;
 
-    genreClick = (genre: string) => {
-        this.setState({isActiveGenre: genre, isActiveCategory: ''});
-    };
+  genreClick = (genre: string) => {
+    this.setState({ isActiveGenre: genre, isActiveCategory: '' });
+  };
 
-    categoryClick = (category: string) => {
-        this.setState({isActiveCategory: category});
-    };
+  categoryClick = (category: string) => {
+    this.setState({ isActiveCategory: category });
+  };
 
-    onSearch = (value: string) => {
-        console.log(` Catalogue -> onSearch -> value: `, value);
-    }
+  render() {
+    // @ts-ignore
+    const categories: Category[] = this.state.genres.find(
+      (item) => item.genre === this.state.isActiveGenre
+    ).categories;
+    // @ts-ignore
+    const activeCategory = this.state.isActiveCategory
+      ? this.state.isActiveCategory
+      : this.categoryClick(categories[0].title);
 
-    render() {
-        // @ts-ignore
-        const categories: Category[] = this.state.genres.find(
-            (item) => item.genre === this.state.isActiveGenre
-        ).categories;
-
-        return (
-            <Box p={1.25}>
-                <Grid
-                    container
-                    direction="row"
-                    justifyContent="center"
-                    alignContent="center"
-                >
-                    <CatalogSearchPanel onSearch={this.onSearch}/>
-                    <CatalogGenres
-                        genres={this.state.genres}
-                        isActiveGenre={this.state.isActiveGenre}
-                        genreClick={this.genreClick}
-                    />
-                    <CatalogCategories
-                        categories={categories}
-                        activeGenre={this.state.isActiveGenre}
-                        isActiveCategory={this.state.isActiveCategory}
-                        categoryClick={this.categoryClick}
-                    />
-                    <CatalogInfo
-                        activeGenre={this.state.isActiveGenre}
-                        activeCategory={this.state.isActiveCategory}
-                    />
-                    <CatalogContent arrMelodies={this.state.arrMelodies}/>
-                </Grid>
-            </Box>
-        );
-    }
+    return (
+      <Box p={1.25}>
+        <Grid container
+          direction="row"
+          justifyContent="center"
+          alignContent="center"
+        >
+          <Grid item xs={12}>
+            <CatalogSearchPanel onSearch={() => {}}/>
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogGenres
+            genres={this.state.genres}
+            isActiveGenre={this.state.isActiveGenre}
+            genreClick={this.genreClick}
+          />
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogCategories
+            categories={categories}
+            activeGenre={this.state.isActiveGenre}
+            // @ts-ignore
+            isActiveCategory={activeCategory}
+            categoryClick={this.categoryClick}
+          />
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogInfo
+            activeGenre={this.state.isActiveGenre}
+            activeCategory={this.state.isActiveCategory}
+          />
+          </Grid>
+          <Grid item xs={12}>
+            <CatalogContent arrMelodies={this.state.arrMelodies} />
+          </Grid>
+          
+        </Grid>
+      </Box>
+    );
+  }
 }
