@@ -4,10 +4,10 @@ import React from 'react';
 import CatalogCategoriesItem from '../catalog-categories-item';
 
 // @material
-import { Grid, Typography, Box } from '@material-ui/core'
+import {Grid, Typography, Box, Divider} from '@material-ui/core';
 
 // style
-import useStyles from './catalog-categories-styles'
+import useStyles from './catalog-categories-styles';
 
 // interface
 import { Category } from '../../api/service/types';
@@ -25,6 +25,7 @@ const CatalogCategories: React.FunctionComponent<CatalogCategoriesProps> = ({
     isActiveCategory,
     activeGenre
 }) => {
+
 
     const { containerPositioning } = useStyles();
     return (
@@ -44,12 +45,14 @@ const CatalogCategories: React.FunctionComponent<CatalogCategoriesProps> = ({
                     alignContent={'center'}
                     item xs={12} sm={9} 
                     className={containerPositioning}>
+
                     {categories.map(item => {
                         return <CatalogCategoriesItem key={item.id} category={item.title} categoryClick={categoryClick}
                             isActiveCategory={isActiveCategory} />
                     })}
                 </Grid>
             </Grid>
+            <Divider/>
         </Box>
     );
 }

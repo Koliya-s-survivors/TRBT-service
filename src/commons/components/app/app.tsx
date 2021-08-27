@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-
 // Routing
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
-// components 
+// components
 import Header from '../header';
 import { Catalogue, MyProfile, LogIn } from '../pages';
 import Footer from "../footer";
@@ -17,10 +16,7 @@ export default class App extends Component {
     return (
       <>
         <Router>
-          <Header/>        
-
-          <section className={"searchPanel"}>This is search panel</section>
-
+          <Header/>
           <main>
             <Switch>
               <Route

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
 // components
 import CatalogGenres from '../../catalog-genres';
