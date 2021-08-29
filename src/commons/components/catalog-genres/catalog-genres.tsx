@@ -10,7 +10,7 @@ import {Box, Grid, Typography, Divider} from '@material-ui/core';
 import useStyles from './catalog-genres-styles';
 
 // interface
-import { Genre } from '../../api/service/types'
+import {Genre} from '../../api/service/types'
 
 export interface CatalogGenresProps {
     genres: Genre[], //item description required
@@ -19,22 +19,32 @@ export interface CatalogGenresProps {
 }
 
 const CatalogGenres: React.FunctionComponent<CatalogGenresProps> = ({genres, isActiveGenre, genreClick}) => {
-    const classes = useStyles();
-    return(
-        <>
-        <Grid item xs={12} className={classes.gridContainer}>
-            <Box className={classes.title}>
-                <Typography variant={"h6"}>Genres</Typography>
-            </Box>
-            <Grid container direction={'row'} justifyContent={'flex-start'} alignContent={'center'} >
-                {genres.map(item => {
-                    return <CatalogCategoriesItem key={item.id} category={item.genre} categoryClick={genreClick}
-                                                  isActiveCategory={isActiveGenre}/>
-                })}
+    const {containerPositioning} = useStyles();
+    return (
+        <Box p={1}>
+            <Grid container direction={'row'} justifyContent={'center'} alignContent={'center'}>
+                <Grid container
+                      direction={'row'}
+                      justifyContent={'center'}
+                      alignContent={'center'}
+                      item xs={12} sm={3}
+                      className={containerPositioning}>
+                    <Typography variant={"subtitle1"}>Genres</Typography>
+                </Grid>
+                <Grid container
+                      direction={'column'}
+                      justifyContent={'center'}
+                      alignContent={'center'}
+                      item xs={12} sm={9}
+                      className={containerPositioning}>
+                    {genres.map(item => {
+                        return <CatalogCategoriesItem key={item.id} category={item.genre} categoryClick={genreClick}
+                                                      isActiveCategory={isActiveGenre}/>
+                    })}
+                </Grid>
             </Grid>
-        </Grid>
-        <Divider/>
-        </>
+            <Divider/>
+        </Box>
     );
 }
 
