@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     padding: '10px',
     '@media(max-width: 600px) ': {
       justifyContent: 'center',
-      
+
     }
   },
   card: {
@@ -43,13 +43,18 @@ const useStyles = makeStyles(() => ({
   },
   checkbox: {
     color: '#64DD17',
-    padding: '0'
+    padding: '0',
   },
   button: {
     backgroundColor: '#fff',
     color: '#64DD17',
     border: '1px solid #64DD17',
-    boxShadow: 'none'
+    boxShadow: 'none',
+    "&:hover": {
+      background: "#64DD17",
+      color: '#fff',
+      borderColor: '#fff'
+    }
   },
 })
 )
