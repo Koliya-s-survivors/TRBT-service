@@ -4,10 +4,10 @@ import React, { Component } from 'react';
 import MyProfileInfoPanel from '../../my-profile-info-panel';
 
 export default class MyProfile extends Component {
-  render() {
+  render() {   
     return (
-      <>
-        <MyProfileInfoPanel />
+      <>      
+        <MyProfileInfoPanel />         
       </>
     )
   }
