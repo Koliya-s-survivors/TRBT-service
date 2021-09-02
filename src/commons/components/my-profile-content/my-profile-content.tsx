@@ -16,18 +16,19 @@ import { Typography, Box, Grid } from '@material-ui/core';
 }
 
 
-const MyProfileContent: React.FC<MyProfileContentProps> = ({ sectionName, itemArray }) => {
+const MyProfileContent: React.FC<MyProfileContentProps> = ({ itemArray }) => {
+  
   return (
     <Box p={1.25}>
-        <Grid container xs={12}>
+        <Grid container >
           <Grid item xs={12}>
             <Typography variant="h4">
-            {sectionName}
+              Content
             </Typography>
           </Grid>
           <Grid item xs={12} lg={6}>
             {itemArray.map(item =>
-              <MyProfileContentItem key={item}
+              <MyProfileContentItem key={item.key}
                 melody={item.melody}
               />
             )}
