@@ -11,7 +11,8 @@ import useStyles from './my-profile-content-item-styles';
 
 interface MyProfileContentItemProps {
   key: number,
-  melody: Melody
+  melody: Melody,
+  isHistoryComponent?: boolean,
 }
 
 interface Melody {
@@ -22,14 +23,14 @@ interface Melody {
   paidPeriod: string,
 }
 
-const MyProfileContentItem: React.FC<MyProfileContentItemProps> = (props) => {
+const MyProfileContentItem: React.FC<MyProfileContentItemProps> = ({ isHistoryComponent, melody }) => {
   const myProfileContentItemClasses: any = useStyles();
   const {
     img,
     musicName,
     artist,
     dataPurchase,
-    paidPeriod, } = props.melody // test props
+    paidPeriod, } = melody // test props
 
   return (
     <Box p={1.25}>
@@ -87,14 +88,19 @@ const MyProfileContentItem: React.FC<MyProfileContentItemProps> = (props) => {
           <Grid item xs={12} >
             <Checkbox color='default' inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} className={myProfileContentItemClasses.checkbox} />default play
           </Grid>
+          {
+            !isHistoryComponent &&
+            <Grid item xs={12} style={{ margin: '5px 0' }}>
+              <Checkbox color='default' inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} className={myProfileContentItemClasses.checkbox} />default play
+            </Grid>
+          }
 
-          <Grid item xs={12} style={{ margin: '5px 0' }}>
-            <Checkbox color='default' inputProps={{ 'aria-label': 'uncontrolled-checkbox' }} className={myProfileContentItemClasses.checkbox} />default play
-          </Grid>
-
-          <Grid item xs={12} >
-            <Button variant="contained" className={myProfileContentItemClasses.button}>Default</Button>
-          </Grid>
+          {
+            !isHistoryComponent &&
+            <Grid item xs={12} >
+              <Button variant="contained" className={myProfileContentItemClasses.button}>Default</Button>
+            </Grid>
+          }
 
         </Grid>
 

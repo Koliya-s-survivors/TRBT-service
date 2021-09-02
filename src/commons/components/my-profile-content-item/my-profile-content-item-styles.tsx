@@ -4,7 +4,7 @@ const useStyles = makeStyles(() => ({
   firstGridContainer: {
     border: '3px solid #64DD17',
     borderRadius: '4px',
-    padding: '10px',
+    padding: '10px',    
     '@media(max-width: 600px) ': {
       justifyContent: 'center',
 
@@ -36,7 +36,8 @@ const useStyles = makeStyles(() => ({
     color: 'black'
   },
   secondGridContainer: {
-    padding: '15px 10px'
+    padding: '15px 10px',
+    alignContent: 'flex-start',
   },
   description: {
     marginBottom: '5px'
