@@ -1,29 +1,51 @@
 import React from 'react';
 
-//styles
-import './my-profile-settings-password-change.css'
-import './my-profile-settings-password-change-media.css'
+// @material
+import { Box, Button, Container, CssBaseline, InputBase, Typography } from '@material-ui/core';
 
-interface Props {}
+// styles
+import useStyles from './my-profile-settings-password-change-style';
+
+interface Props { }
 
 const MyProfileSettingsPasswordChange: React.FC<Props> = () => {
-    return <article className="my-profile-settings-password-change">
-            <section >
-                <h3>Subscriber password settings</h3>
-                <form>
-                    <label htmlFor="new_password">New password:</label>
-                    <input name="password" type="password" id="new_password" />
-                    <p></p>
-
-                    <label htmlFor="confirm_password">Confirm password:</label>
-                    <input name="password" type="password" id="confirm_password" />
-                    <p></p>
-
-                    <button type="button">Cancel</button>
-                    <button type="submit">OK</button>
-                </form>
-            </section>
-        </article >
+    const myProfileSettingsPasswordChangeClasses = useStyles();
+    return (
+        <Box p={1.25}>
+            <Container maxWidth="xs" className={myProfileSettingsPasswordChangeClasses.container}>
+                <CssBaseline />
+                <div className={myProfileSettingsPasswordChangeClasses.paper}>
+                    <Typography variant="h5">
+                        Subscriber password settings
+                    </Typography>
+                    <form className={myProfileSettingsPasswordChangeClasses.form} noValidate>
+                        <InputBase placeholder="New password" className={myProfileSettingsPasswordChangeClasses.textField}
+                        />
+                        <InputBase placeholder="Confirm password" className={myProfileSettingsPasswordChangeClasses.textField}
+                        />
+                        <Box p={1.25} className={myProfileSettingsPasswordChangeClasses.boxBtn} >
+                            <Button
+                                size='large'
+                                variant="contained"
+                                color="default"
+                                className={myProfileSettingsPasswordChangeClasses.cancel}
+                            >
+                                Cancel
+                            </Button>
+                            <Button
+                                size='large'
+                                variant="contained"
+                                color="default"
+                                className={myProfileSettingsPasswordChangeClasses.okay}
+                            >
+                                OK
+                            </Button>
+                        </Box>
+                    </form>
+                </div>
+            </Container >
+        </Box>
+    )   
 };
 
 export default MyProfileSettingsPasswordChange;
