@@ -1,30 +1,54 @@
-import React, { Component } from 'react';
+import React from 'react';
+
+// @material
+import { Box, Button, Container, CssBaseline, InputBase, Typography } from '@material-ui/core';
 
 // styles
-import './log-in-form.css'
+import useStyles from './log-in-form-styles';
 
-interface Props {}
+interface Props { }
 
-interface State {}
+interface State { }
 
-export default class LogInForm extends Component<Props, State> {
-    render() {
-        return <article className="log-in-form">
-            <section >
-                <h3>Authorize</h3>
-                <form>
-                    <label htmlFor="user_email">E-mail:</label>
-                    <input name="email" type="text" id="user_email" />
-                    <p></p>
-                    
-                    <label htmlFor="user_password">Password:</label>
-                    <input name="password" type="password" id="user_password" />
-                    <p></p>
-
-                    <a href="#">Registration</a>
-                    <button type="submit">Sign in</button>
-                </form>
-            </section>
-        </article >
-    }
+const LogInForm: React.FC = () => {
+    const logInFormClasses = useStyles();
+    return (
+        <Box p={1.25}>
+            <Container maxWidth="xs" className={logInFormClasses.container}>
+                <CssBaseline />
+                <div className={logInFormClasses.paper}>
+                    <Typography variant="h5">
+                        Authorize
+                    </Typography>
+                    <form className={logInFormClasses.form} noValidate>
+                        <InputBase placeholder="E-mail:" className={logInFormClasses.textField}
+                        />
+                        <InputBase placeholder="Password:" className={logInFormClasses.textField}
+                        />
+                        <Box p={1.25} className={logInFormClasses.boxBtn} >
+                            <Button
+                                size='large'
+                                variant="contained"
+                                color="default"
+                                className={logInFormClasses.cancel}
+                            >
+                                Registration
+                            </Button>
+                            <Button
+                                size='large'
+                                variant="contained"
+                                color="default"
+                                className={logInFormClasses.okay}
+                            >
+                                Sign in
+                            </Button>
+                        </Box>
+                    </form>
+                </div>
+            </Container >
+        </Box>
+        
+    )    
 }
+
+export default LogInForm;

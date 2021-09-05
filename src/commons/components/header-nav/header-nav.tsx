@@ -31,9 +31,9 @@ const HeaderNav: React.FC = () => {
          </Grid>
           <Grid item xs >
           <Link to="/login">
-            <Typography className={headerNav.loginLink}>
+            <Button className={headerNav.loginLink}>
               Login
-            </Typography>
+            </Button>
           </Link>
           </Grid>
       </Grid>
