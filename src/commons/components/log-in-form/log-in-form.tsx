@@ -6,10 +6,6 @@ import { Box, Button, Container, CssBaseline, InputBase, Typography } from '@mat
 // styles
 import useStyles from './log-in-form-styles';
 
-interface Props { }
-
-interface State { }
-
 const LogInForm: React.FC = () => {
     const logInFormClasses = useStyles();
     return (
@@ -47,8 +43,8 @@ const LogInForm: React.FC = () => {
                 </div>
             </Container >
         </Box>
-        
-    )    
+
+    )
 }
 
 export default LogInForm;
