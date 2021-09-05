@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles((theme)=> ({
+const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     flexDirection: 'column',
@@ -47,25 +47,7 @@ const useStyles = makeStyles((theme)=> ({
   },
   textError: {
     color: '#f44336',
-  }
-  // grid:{
-  //   display:'flex',
-  //   flexDirection:'column',
-  //   alignItems:'center',     
-  // },
-  // form: {
-  //   display: 'flex',
-  //   flexDirection: 'column',
-  //   alignItems: 'center',       
-  // },
-  // inputBase:{
-  //   width:'100%',
-  //   border:'2px solid #64DD17',
-  //   borderRadius:'4px',
-  //   marginTop:theme.spacing(2),
-  //   marginBottom: theme.spacing(2),
-  //   padding:'10px',
-  // },  
+  },
 }))
 
 export default useStyles;
