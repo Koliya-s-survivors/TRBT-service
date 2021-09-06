@@ -1,10 +1,10 @@
 import React from 'react';
 
 //@material
-import {Button, Box} from '@material-ui/core';
+import { Button, Box } from '@material-ui/core';
 
 // style
-import useStyles from './catalog-categories-item-styles'
+import useStyles from './catalog-button-item-styles'
 
 // interface
 interface CatalogCategoriesItemProps {
@@ -19,15 +19,15 @@ const CatalogCategoriesItem: React.FunctionComponent<CatalogCategoriesItemProps>
     categoryClick
 }) => {
     const catalogCategoriesItemClasses = useStyles();
- 
-    const styleButton = (isActiveCategory === category) ? catalogCategoriesItemClasses.buttonAction : catalogCategoriesItemClasses.button
+
+    const styleButton = (isActiveCategory === category) ? `${catalogCategoriesItemClasses.buttonAction} ${catalogCategoriesItemClasses.button}` : catalogCategoriesItemClasses.button;
 
     function onClick() {
         categoryClick(category)
     }
 
     return (
-        <Box p={0.3}>
+        <Box component='article' p={0.8}>
             <Button variant={"outlined"} className={styleButton} onClick={onClick}>
                 {category}
             </Button>

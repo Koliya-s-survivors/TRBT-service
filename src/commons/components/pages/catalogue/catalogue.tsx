@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 // components
 import CatalogGenres from '../../catalog-genres';
@@ -9,13 +9,13 @@ import CatalogSearchPanel from '../../catalog-search-panel';
 import service from '../../../api/service';
 
 // @material
-import { Grid, Box } from '@material-ui/core';
+import { Container, Grid, Box } from '@material-ui/core';
 
 // interface
 import { Service } from '../../../api/service/types';
-interface Props {}
+interface Props { }
 
-interface State extends Service {}
+interface State extends Service { }
 
 export default class Catalogue extends Component<Props, State> {
   state: State = service;
@@ -39,41 +39,33 @@ export default class Catalogue extends Component<Props, State> {
       : this.categoryClick(categories[0].title);
 
     return (
-      <Box p={1.25}>
-        <Grid container
-          direction="row"
-          justifyContent="center"
-          alignContent="center"
-        >
-          <Grid item xs={12}>
-            <CatalogSearchPanel onSearch={() => {}}/>
-          </Grid>
-          <Grid item xs={12}>
-            <CatalogGenres
+      <Box component='main'>
+        <Grid component='article' direction='column' alignContent='center' justifyContent='flex-start'>
+
+          <CatalogSearchPanel onSearch={() => { }} />
+
+          <CatalogGenres
             genres={this.state.genres}
             isActiveGenre={this.state.isActiveGenre}
             genreClick={this.genreClick}
           />
-          </Grid>
-          <Grid item xs={12}>
-            <CatalogCategories
+
+          <CatalogCategories
             categories={categories}
             activeGenre={this.state.isActiveGenre}
             // @ts-ignore
             isActiveCategory={activeCategory}
             categoryClick={this.categoryClick}
           />
-          </Grid>
-          <Grid item xs={12}>
-            <CatalogInfo
+
+          <CatalogInfo
             activeGenre={this.state.isActiveGenre}
             activeCategory={this.state.isActiveCategory}
           />
-          </Grid>
-          <Grid item xs={12}>
-            <CatalogContent arrMelodies={this.state.arrMelodies} />
-          </Grid>
-          
+
+          <CatalogContent arrMelodies={this.state.arrMelodies} />
+
+
         </Grid>
       </Box>
     );

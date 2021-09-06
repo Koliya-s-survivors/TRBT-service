@@ -12,7 +12,7 @@ interface Props { }
 const HeaderLogo: React.FC<Props> = () => {
   const headerLogoClasses = useStyles();
   return (
-    <Box p={1}>
+    <Box component='article' p={1}>
       <Typography variant='h1' >
         <Link className={headerLogoClasses.headerLogo} to="/">T-RBT Service</Link>
       </Typography>

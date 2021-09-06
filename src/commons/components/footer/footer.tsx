@@ -14,15 +14,13 @@ import useStyles from './footer-styles';
 const Footer: React.FC = () => {
   const footerClasses = useStyles();
   return (
-    <Box p={1} className={footerClasses.container}>
-      <Grid container item xs={12}
-        justifyContent={'center'}
-        alignContent={'center'}>
-        <Grid item xs={12} sm={9} >
+    <Box component='footer' p={1} className={footerClasses.container}>
+      <Grid component='article' container justifyContent={'center'} alignContent={'center'}>
+        <Grid component='section' item xs={12} sm={9} >
           <FooterLogo />
           <FooterInfo />
         </Grid>        
-        <Grid item xs={12} sm={3}  >
+        <Grid component='section' item xs={12} sm={3}  >
           <FooterDownloadApp />
         </Grid>
       </Grid>

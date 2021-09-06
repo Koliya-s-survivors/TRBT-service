@@ -4,7 +4,7 @@ import React from 'react';
 import CatalogContentItem from '../catalog-content-item';
 
 // @material
-import { Container, Grid, Box } from '@material-ui/core';
+import { Grid, Box } from '@material-ui/core';
 
 // interface
 import { Melody } from '../../api/service/types';
@@ -13,16 +13,14 @@ interface CatalogContentProps {
   arrMelodies: Melody[]
 }
 
-const CatalogContent: React.FC<CatalogContentProps> = ({arrMelodies}) => {
+const CatalogContent: React.FC<CatalogContentProps> = ({ arrMelodies }) => {
   return (
-    <Box py={4}>
-      <Container fixed maxWidth="md">
-      <Grid container spacing={4} justifyContent="center">
+    <Box component='section' p={1}>
+      <Grid component='article' container direction='row' justifyContent='center' alignItems='flex-start'>
         {arrMelodies.map(item =>
           <CatalogContentItem key={item.id} melody={item} />
         )}
       </Grid>
-    </Container>
     </Box>
   )
 }
