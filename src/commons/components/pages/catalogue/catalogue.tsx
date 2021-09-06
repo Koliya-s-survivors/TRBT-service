@@ -40,7 +40,7 @@ export default class Catalogue extends Component<Props, State> {
 
     return (
       <Box component='main'>
-        <Grid component='article' direction='column' alignContent='center' justifyContent='flex-start'>
+        <Grid container component='article' direction='column' alignContent='center' justifyContent='flex-start'>
 
           <CatalogSearchPanel onSearch={() => { }} />
 
