@@ -11,15 +11,11 @@ const useStyles = makeStyles(() => ({
         width: "140px",
     },
     buttonAction: {
-        borderColor: "#64DD17",
-        borderWidth: "2px",
         background: "#64DD17",
         color: "white",
         "&:hover": {
             background: "rgba(100, 221, 23, 0.6)",
         },
-        borderRadius: "10px",
-        width: "140px",
     },
 }))
 

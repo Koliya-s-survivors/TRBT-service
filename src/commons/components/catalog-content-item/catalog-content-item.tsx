@@ -27,16 +27,15 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
   const catalogContentItemClasses: any = useStyles();
 
   return (
-    <Box p={1}>
-      <Grid container>
-        <Card className={catalogContentItemClasses.card}>
+    <Box component='article' p={1}>
+        <Card component='section' className={catalogContentItemClasses.card}>
           <CardMedia
             className={catalogContentItemClasses.cardMedia}
             image=' https://source.unsplash.com/random'
             title='Image title'
           />
 
-          <CardContent>
+          <CardContent component='article'>
             <Typography variant='h5' className={catalogContentItemClasses.title}>
               {musicName}
             </Typography>
@@ -47,7 +46,7 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
 
           <CardActions>
 
-            <Grid container justifyContent={'flex-start'} item xs={3}>
+            <Grid component='article' container justifyContent={'flex-start'} item xs={3}>
               <IconButton aria-label="price">
                 <Typography variant='h5' className={catalogContentItemClasses.price}>
                   {price}
@@ -55,7 +54,7 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
               </IconButton>
             </Grid>
 
-            <Grid container justifyContent={'flex-end'} item xs={9}>
+            <Grid component='article' container justifyContent={'flex-end'} item xs={9}>
               <IconButton aria-label="shopping-cart">
                 <Link to='/' className={catalogContentItemClasses.link}>
                   <ShoppingCartOutlinedIcon />
@@ -77,7 +76,6 @@ const CatalogContentItem: React.FC<CatalogContentItemProps> = (props) => {
 
           </CardActions>
         </Card>
-      </Grid>
     </Box>
   )
 }

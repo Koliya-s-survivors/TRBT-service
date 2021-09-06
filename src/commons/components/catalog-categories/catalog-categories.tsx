@@ -1,7 +1,7 @@
 import React from 'react';
 
 // components
-import CatalogCategoriesItem from '../catalog-categories-item';
+import CatalogCategoriesItem from '../catalog-button-item';
 
 // @material
 import {Grid, Typography, Box, Divider} from '@material-ui/core';
@@ -29,7 +29,7 @@ const CatalogCategories: React.FunctionComponent<CatalogCategoriesProps> = ({
 
     const { containerPositioning } = useStyles();
     return (
-        <Box p={1}>
+        <Box component='section' p={1}>
             <Grid container direction={'row'} justifyContent={'center'} alignContent={'center'}>
                 <Grid container 
                     direction={'row'}

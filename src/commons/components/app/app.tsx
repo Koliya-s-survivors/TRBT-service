@@ -8,16 +8,17 @@ import Header from '../header';
 import { Catalogue, MyProfile, LogIn } from '../pages';
 import Footer from "../footer";
 
-
+// @material
+import { Container } from '@material-ui/core';
 
 export default class App extends Component {
   render() {
 
     return (
-      <>
+      <Container component='main' maxWidth="xl">
         <Router>
           <Header/>
-          <main>
+          
             <Switch>
               <Route
                 path="/"
@@ -38,12 +39,12 @@ export default class App extends Component {
               <Route render={() => <h2>Page not found</h2>} />
 
             </Switch>
-          </main>
+          
 
           <Footer/>
         </Router>
 
-      </>
+      </Container>
     );
   }
 }
