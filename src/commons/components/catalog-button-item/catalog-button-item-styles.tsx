@@ -8,7 +8,7 @@ const useStyles = makeStyles(() => ({
             background: "#64DD17",
         },
         borderRadius: "10px",
-        width: "140px",
+        width: "170px",
     },
     buttonAction: {
         background: "#64DD17",
