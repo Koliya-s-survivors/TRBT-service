@@ -5,7 +5,7 @@ import HeaderLogo from '../header-logo';
 import HeaderNav from '../header-nav';
 
 //@material
-import { Box, AppBar, Container, Toolbar, Grid } from "@material-ui/core";
+import { AppBar, Toolbar, Grid } from "@material-ui/core";
 
 // styles
 import useStyles from './header-styles';
@@ -18,7 +18,7 @@ const Header: React.FC = () => {
             <Toolbar component='article'>
                 <Grid component='section' container direction='column'>
                     <HeaderLogo />
-                    <HeaderNav />
+                    <HeaderNav  isAuth={true}/>
                 </Grid>
             </Toolbar>
         </AppBar>
