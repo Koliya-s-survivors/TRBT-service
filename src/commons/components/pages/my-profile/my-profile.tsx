@@ -24,9 +24,6 @@ interface State {
 
 const tabs = [
   {id: 1, title: 'Content'}, 
-  {id: 2, title: 'Groups'}, 
-  {id: 3, title: 'Schedule'}, 
-  {id: 4, title: 'Gifts'}, 
   {id: 5, title: 'Charges'}, 
   {id: 6, title: 'History'}, 
   {id: 7, title: 'Settings'}
